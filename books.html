@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3x3 Books</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header with Title + Nav -->
+  <header>
+    <h1>3x3 Books</h1>
+    <nav>
+      <ul class="navbar">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">3x3 Books</a></li>
+        <li><a href="#">3x3 Movies</a></li>
+        <li><a href="#">3x3 Mythology</a></li>
+      </ul>
+      <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
+    </nav>
+  </header>
+
+  <!-- Main Game Section -->
+  <main>
+    <!-- Game Grid -->
+    <section class="grid-container">
+      <div class="grid">
+        <!-- 9 boxes for input (3x3) -->
+        <div class="grid-box" data-cell="0-0"><input type="text" /></div>
+        <div class="grid-box" data-cell="0-1"><input type="text" /></div>
+        <div class="grid-box" data-cell="0-2"><input type="text" /></div>
+        <div class="grid-box" data-cell="1-0"><input type="text" /></div>
+        <div class="grid-box" data-cell="1-1"><input type="text" /></div>
+        <div class="grid-box" data-cell="1-2"><input type="text" /></div>
+        <div class="grid-box" data-cell="2-0"><input type="text" /></div>
+        <div class="grid-box" data-cell="2-1"><input type="text" /></div>
+        <div class="grid-box" data-cell="2-2"><input type="text" /></div>
+      </div>
+    </section>
+
+    <!-- Stats + Controls -->
+    <section class="game-info">
+      <div class="scoreboard">
+        <p>Current Score: <span id="current-score">0</span></p>
+        <p>All-Time Score: <span id="all-time-score">0</span></p>
+        <p>Guesses Left: <span id="guesses-left">9</span></p>
+      </div>
+
+      <div class="game-controls">
+        <button id="random-board">🔀 Random Board</button>
+        <button id="view-archive">📜 Past Boards</button>
+        <button id="view-answers">📚 Accepted Answers</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- How to Play Modal -->
+  <div id="how-to-play" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>How to Play</h2>
+      <p>Type book titles that match the intersecting row and column categories in each grid square.</p>
+      <p>Suggestions will appear after typing 4+ letters (or immediately if the title is shorter).</p>
+      <p>Try to fill the board with as few guesses as possible. Good luck!</p>
+    </div>
+  </div>
+
+  <!-- Help Icon -->
+  <button id="help-btn" aria-label="Show Help">❓</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
