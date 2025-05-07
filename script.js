@@ -24,6 +24,10 @@ const modal = document.getElementById("how-to-play");
 const helpBtn = document.getElementById("help-btn");
 const closeBtn = document.querySelector(".close-btn");
 
+helpBtn.addEventListener("click", () => {
+    modal.classList.remove("hidden");
+  });
+
 // Show on first load
 window.addEventListener("load", () => {
   modal.classList.remove("hidden");
