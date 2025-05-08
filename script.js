@@ -11,7 +11,6 @@ themeToggle.addEventListener("click", () => {
   }
 });
 
-// === Load Preferences on Startup ===
 window.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
@@ -20,7 +19,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   loadBookData();
   loadBoardFromDate();
-  setupGridClickFocus();
+  setupGrid();
 });
 
 // === Modal Logic ===
@@ -40,7 +39,7 @@ closeBtn.addEventListener("click", () => {
   modal.classList.add("hidden");
 });
 
-// === Book Data Loader ===
+// === Load Book Titles from JSON ===
 let allBooks = [];
 let acceptedTitles = [];
 
@@ -49,13 +48,13 @@ async function loadBookData() {
     const response = await fetch("books.json");
     allBooks = await response.json();
     acceptedTitles = allBooks.map(book => book.title.toLowerCase());
-    console.log("Loaded book titles:", acceptedTitles);
+    console.log("Book titles loaded:", acceptedTitles);
   } catch (err) {
     console.error("Error loading books.json:", err);
   }
 }
 
-// === Board Loader (stub for future expansion) ===
+// === Daily Board Loader (stub for now) ===
 function loadBoardFromDate() {
   const startDate = new Date("2025-05-05");
   const today = new Date();
@@ -64,29 +63,67 @@ function loadBoardFromDate() {
   const boardPath = `boards/board-${boardNumber.toString().padStart(3, "0")}.json`;
 
   console.log("Would load board from:", boardPath);
-  // Future: fetch(boardPath).then(...) to populate row/column labels
+  // Future: fetch(boardPath).then(...) and inject categories
 }
 
-// === Clickable Grid Box → Focus Input ===
-function setupGridClickFocus() {
+// === Set up Grid Input + Autocomplete ===
+function setupGrid() {
   const boxes = document.querySelectorAll(".grid-box");
 
   boxes.forEach(box => {
     const input = box.querySelector(".cell-input");
+    const dropdown = box.querySelector(".autocomplete");
 
-    // Click anywhere on the box to focus the input
+    // Make full box clickable
     box.addEventListener("click", () => {
       input.focus();
     });
 
-    // Optional: log what's typed
-    input.addEventListener("input", () => {
-      console.log(`[${box.dataset.cell}] Typed: ${input.value}`);
-    });
-
-    // Optional: select contents on focus
+    // Select text on focus
     input.addEventListener("focus", () => {
       input.select();
+    });
+
+    // Handle typing input
+    input.addEventListener("input", () => {
+      const value = input.value.toLowerCase().trim();
+      dropdown.innerHTML = "";
+
+      if (value.length >= 4 || acceptedTitles.includes(value)) {
+        const matches = acceptedTitles
+          .filter(title => title.startsWith(value))
+          .slice(0, 5);
+
+        if (matches.length > 0) {
+          matches.forEach(match => {
+            const item = document.createElement("div");
+            item.textContent = match;
+            item.classList.add("autocomplete-item");
+
+            item.addEventListener("click", () => {
+              input.value = match;
+              dropdown.innerHTML = "";
+              dropdown.style.display = "none";
+              input.focus();
+            });
+
+            dropdown.appendChild(item);
+          });
+
+          dropdown.style.display = "block";
+        } else {
+          dropdown.style.display = "none";
+        }
+      } else {
+        dropdown.style.display = "none";
+      }
+    });
+
+    // Hide dropdown on blur
+    input.addEventListener("blur", () => {
+      setTimeout(() => {
+        dropdown.style.display = "none";
+      }, 100); // Short delay allows clicks to register
     });
   });
 }

@@ -83,11 +83,11 @@ nav {
   gap: 4px;
 }
 
-/* All cells: row, column, corner, and answer */
 .grid-box,
 .col-label,
 .row-label,
 .label-corner {
+  position: relative;
   background-color: var(--box-bg);
   border: 2px solid var(--accent-color);
   display: flex;
@@ -103,7 +103,7 @@ nav {
   overflow-wrap: break-word;
 }
 
-/* === 4. Invisible Input === */
+/* === 4. Input Styling === */
 .cell-input {
   all: unset;
   width: 100%;
@@ -116,9 +116,37 @@ nav {
   padding: 0.5rem;
   border: none;
   outline: none;
+  z-index: 1;
 }
 
-/* === 5. Game Info + Controls === */
+/* === 5. Autocomplete Dropdown === */
+.autocomplete {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--box-bg);
+  border: 1px solid var(--accent-color);
+  z-index: 2;
+  max-height: 120px;
+  overflow-y: auto;
+  display: none;
+  font-weight: normal;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.autocomplete-item {
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.autocomplete-item:hover,
+.autocomplete-item.active {
+  background-color: var(--accent-color);
+}
+
+/* === 6. Game Info + Controls === */
 .game-info {
   text-align: center;
 }
@@ -144,7 +172,7 @@ nav {
   border-radius: 5px;
 }
 
-/* === 6. Modal === */
+/* === 7. Modal === */
 .modal {
   position: fixed;
   top: 0;
@@ -180,7 +208,7 @@ nav {
   cursor: pointer;
 }
 
-/* === 7. Help Button === */
+/* === 8. Help Button === */
 #help-btn {
   position: fixed;
   bottom: 1rem;
@@ -194,7 +222,7 @@ nav {
   cursor: pointer;
 }
 
-/* === 8. Responsive Grid (optional tweak for smaller screens) === */
+/* === 9. Responsive Grid (Optional) === */
 @media (max-width: 600px) {
   .grid {
     grid-template-columns: repeat(4, 80px);
