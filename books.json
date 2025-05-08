@@ -33,7 +33,9 @@
         "Male"
       ],
       "multiple_pov": true,
-      "pov_type": "Stream of consciousness",
+      "pov_type": [
+        "Stream of consciousness"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Nonlinear",
@@ -44,7 +46,8 @@
       "controversy_or_banned": true,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Unreliable"
+      "narrator_type": "Unreliable",
+      "fictional_world": false
     },
     {
       "title": "The Great Gatsby",
@@ -79,7 +82,9 @@
         "Male"
       ],
       "multiple_pov": false,
-      "pov_type": "First-person",
+      "pov_type": [
+        "First-person"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Linear",
@@ -90,7 +95,8 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Observer"
+      "narrator_type": "Observer",
+      "fictional_world": false
     },
     {
       "title": "A Portrait of the Artist as a Young Man",
@@ -125,7 +131,9 @@
         "Male"
       ],
       "multiple_pov": false,
-      "pov_type": "Third-person limited",
+      "pov_type": [
+        "Third-person limited"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Chronological",
@@ -136,7 +144,8 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Subjective"
+      "narrator_type": "Subjective",
+      "fictional_world": false
     },
     {
       "title": "Lolita",
@@ -170,7 +179,9 @@
         "Male"
       ],
       "multiple_pov": false,
-      "pov_type": "First-person",
+      "pov_type": [
+        "First-person"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Nonlinear",
@@ -181,7 +192,8 @@
       "controversy_or_banned": true,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Unreliable"
+      "narrator_type": "Unreliable",
+      "fictional_world": false
     },
     {
       "title": "Brave New World",
@@ -215,7 +227,9 @@
         "Male"
       ],
       "multiple_pov": true,
-      "pov_type": "Third-person omniscient",
+      "pov_type": [
+        "Third-person omniscient"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Linear",
@@ -226,7 +240,8 @@
       "controversy_or_banned": true,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Omniscient"
+      "narrator_type": "Omniscient",
+      "fictional_world": false
     },
     {
       "title": "The Sound and the Fury",
@@ -260,7 +275,9 @@
         "Male"
       ],
       "multiple_pov": true,
-      "pov_type": "Stream of consciousness",
+      "pov_type": [
+        "Stream of consciousness"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Nonlinear",
@@ -271,7 +288,8 @@
       "controversy_or_banned": true,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Unreliable"
+      "narrator_type": "Unreliable",
+      "fictional_world": false
     },
     {
       "title": "Catch-22",
@@ -306,7 +324,9 @@
         "Male"
       ],
       "multiple_pov": true,
-      "pov_type": "Third-person omniscient",
+      "pov_type": [
+        "Third-person omniscient"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Nonlinear",
@@ -317,7 +337,8 @@
       "controversy_or_banned": true,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Omniscient"
+      "narrator_type": "Omniscient",
+      "fictional_world": false
     },
     {
       "title": "Darkness at Noon",
@@ -332,7 +353,7 @@
       ],
       "time_setting": [
         "1930s",
-        "Pre\u2013World War II"
+        "Pre\u00e2\u0080\u0093World War II"
       ],
       "genre": [
         "Political Fiction",
@@ -351,7 +372,9 @@
         "Male"
       ],
       "multiple_pov": false,
-      "pov_type": "Third-person limited",
+      "pov_type": [
+        "Third-person limited"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Linear",
@@ -362,7 +385,8 @@
       "controversy_or_banned": true,
       "intended_audience": "Adult",
       "translated": true,
-      "narrator_type": "Subjective"
+      "narrator_type": "Subjective",
+      "fictional_world": false
     },
     {
       "title": "Sons and Lovers",
@@ -397,7 +421,9 @@
         "Male"
       ],
       "multiple_pov": false,
-      "pov_type": "Third-person omniscient",
+      "pov_type": [
+        "Third-person omniscient"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Chronological"
@@ -407,7 +433,8 @@
       "controversy_or_banned": true,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Omniscient"
+      "narrator_type": "Omniscient",
+      "fictional_world": false
     },
     {
       "title": "The Grapes of Wrath",
@@ -444,7 +471,9 @@
         "Male"
       ],
       "multiple_pov": true,
-      "pov_type": "Third-person omniscient",
+      "pov_type": [
+        "Third-person omniscient"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Alternating chapters",
@@ -457,13 +486,14 @@
       "controversy_or_banned": true,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Omniscient"
+      "narrator_type": "Omniscient",
+      "fictional_world": false
     },
     {
       "title": "Under the Volcano",
       "author": "Malcolm Lowry",
       "year_published": 1947,
-      "word_count": "[verify]",
+      "word_count": 136530,
       "series": "Standalone",
       "country_of_author": "United Kingdom",
       "original_language": "English",
@@ -491,7 +521,9 @@
         "Male"
       ],
       "multiple_pov": true,
-      "pov_type": "[verify]",
+      "pov_type": [
+        "[verify]"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Nonlinear",
@@ -502,13 +534,14 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "[verify]"
+      "narrator_type": "[verify]",
+      "fictional_world": false
     },
     {
       "title": "The Way of All Flesh",
       "author": "Samuel Butler",
       "year_published": 1903,
-      "word_count": "[verify]",
+      "word_count": 163853,
       "series": "Standalone",
       "country_of_author": "United Kingdom",
       "original_language": "English",
@@ -535,7 +568,9 @@
         "Male"
       ],
       "multiple_pov": false,
-      "pov_type": "First-person",
+      "pov_type": [
+        "First-person"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Linear"
@@ -545,7 +580,8 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Observer"
+      "narrator_type": "Observer",
+      "fictional_world": false
     },
     {
       "title": "1984",
@@ -580,7 +616,9 @@
         "Male"
       ],
       "multiple_pov": false,
-      "pov_type": "Third-person limited",
+      "pov_type": [
+        "Third-person limited"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Linear"
@@ -590,13 +628,14 @@
       "controversy_or_banned": true,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Subjective"
+      "narrator_type": "Subjective",
+      "fictional_world": false
     },
     {
       "title": "I, Claudius",
       "author": "Robert Graves",
       "year_published": 1934,
-      "word_count": "[verify]",
+      "word_count": 159139,
       "series": "Series",
       "country_of_author": "United Kingdom",
       "original_language": "English",
@@ -623,7 +662,9 @@
         "Male"
       ],
       "multiple_pov": false,
-      "pov_type": "First-person",
+      "pov_type": [
+        "First-person"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Memoir style",
@@ -634,13 +675,14 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Unreliable"
+      "narrator_type": "Unreliable",
+      "fictional_world": false
     },
     {
       "title": "To the Lighthouse",
       "author": "Virginia Woolf",
       "year_published": 1927,
-      "word_count": "[verify]",
+      "word_count": 69769,
       "series": "Standalone",
       "country_of_author": "United Kingdom",
       "original_language": "English",
@@ -669,7 +711,9 @@
         "Male"
       ],
       "multiple_pov": true,
-      "pov_type": "Stream of consciousness",
+      "pov_type": [
+        "Stream of consciousness"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Nonlinear",
@@ -680,13 +724,14 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Subjective"
+      "narrator_type": "Subjective",
+      "fictional_world": false
     },
     {
       "title": "An American Tragedy",
       "author": "Theodore Dreiser",
       "year_published": 1925,
-      "word_count": "[verify]",
+      "word_count": 332845,
       "series": "Standalone",
       "country_of_author": "United States",
       "original_language": "English",
@@ -714,7 +759,9 @@
         "Male"
       ],
       "multiple_pov": false,
-      "pov_type": "Third-person omniscient",
+      "pov_type": [
+        "Third-person omniscient"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Chronological",
@@ -725,13 +772,14 @@
       "controversy_or_banned": true,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Omniscient"
+      "narrator_type": "Omniscient",
+      "fictional_world": false
     },
     {
       "title": "The Heart Is a Lonely Hunter",
       "author": "Carson McCullers",
       "year_published": 1940,
-      "word_count": "[verify]",
+      "word_count": 127923,
       "series": "Standalone",
       "country_of_author": "United States",
       "original_language": "English",
@@ -759,7 +807,9 @@
         "Multiple"
       ],
       "multiple_pov": true,
-      "pov_type": "Third-person limited",
+      "pov_type": [
+        "Third-person limited"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Multi-threaded",
@@ -770,7 +820,8 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Subjective"
+      "narrator_type": "Subjective",
+      "fictional_world": false
     },
     {
       "title": "Slaughterhouse-Five",
@@ -808,7 +859,9 @@
         "Male"
       ],
       "multiple_pov": false,
-      "pov_type": "First-person frame / Third-person embedded",
+      "pov_type": [
+        "First-person frame / Third-person embedded"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Nonlinear",
@@ -819,13 +872,14 @@
       "controversy_or_banned": true,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Unreliable"
+      "narrator_type": "Unreliable",
+      "fictional_world": false
     },
     {
       "title": "Invisible Man",
       "author": "Ralph Ellison",
       "year_published": 1952,
-      "word_count": "[verify]",
+      "word_count": 215259,
       "series": "Standalone",
       "country_of_author": "United States",
       "original_language": "English",
@@ -854,7 +908,9 @@
         "Male"
       ],
       "multiple_pov": false,
-      "pov_type": "First-person",
+      "pov_type": [
+        "First-person"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Linear",
@@ -867,13 +923,14 @@
       "controversy_or_banned": true,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Subjective"
+      "narrator_type": "Subjective",
+      "fictional_world": false
     },
     {
       "title": "Native Son",
       "author": "Richard Wright",
       "year_published": 1940,
-      "word_count": "[verify]",
+      "word_count": 157921,
       "series": "Standalone",
       "country_of_author": "United States",
       "original_language": "English",
@@ -901,7 +958,9 @@
         "Male"
       ],
       "multiple_pov": false,
-      "pov_type": "Third-person limited",
+      "pov_type": [
+        "Third-person limited"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Linear",
@@ -912,13 +971,14 @@
       "controversy_or_banned": true,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Subjective"
+      "narrator_type": "Subjective",
+      "fictional_world": false
     },
     {
       "title": "Henderson the Rain King",
       "author": "Saul Bellow",
       "year_published": 1959,
-      "word_count": "[verify]",
+      "word_count": 132020,
       "series": "Standalone",
       "country_of_author": "United States",
       "original_language": "English",
@@ -945,7 +1005,9 @@
         "Male"
       ],
       "multiple_pov": false,
-      "pov_type": "First-person",
+      "pov_type": [
+        "First-person"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Chronological",
@@ -956,13 +1018,14 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Subjective"
+      "narrator_type": "Subjective",
+      "fictional_world": true
     },
     {
       "title": "Appointment in Samarra",
       "author": "John O'Hara",
       "year_published": 1934,
-      "word_count": "[verify]",
+      "word_count": 60000,
       "series": "Standalone",
       "country_of_author": "United States",
       "original_language": "English",
@@ -990,7 +1053,9 @@
         "Male"
       ],
       "multiple_pov": false,
-      "pov_type": "Third-person omniscient",
+      "pov_type": [
+        "Third-person omniscient"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Linear",
@@ -1001,13 +1066,14 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Omniscient"
+      "narrator_type": "Omniscient",
+      "fictional_world": false
     },
     {
       "title": "USA Trilogy",
       "author": "John Dos Passos",
       "year_published": 1938,
-      "word_count": "[verify]",
+      "word_count": 417335,
       "series": "Trilogy",
       "country_of_author": "United States",
       "original_language": "English",
@@ -1037,7 +1103,9 @@
         "Multiple"
       ],
       "multiple_pov": true,
-      "pov_type": "Multiple perspectives / Newsreel and narrative mix",
+      "pov_type": [
+        "Multiple perspectives / Newsreel and narrative mix"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Nonlinear",
@@ -1049,13 +1117,14 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Multiple"
+      "narrator_type": "Multiple",
+      "fictional_world": false
     },
     {
       "title": "Winesburg, Ohio",
       "author": "Sherwood Anderson",
       "year_published": 1919,
-      "word_count": "[verify]",
+      "word_count": 77184,
       "series": "Standalone (Short Story Cycle)",
       "country_of_author": "United States",
       "original_language": "English",
@@ -1085,7 +1154,9 @@
         "Multiple"
       ],
       "multiple_pov": true,
-      "pov_type": "Third-person limited",
+      "pov_type": [
+        "Third-person limited"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Episodic",
@@ -1096,13 +1167,14 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Subjective"
+      "narrator_type": "Subjective",
+      "fictional_world": false
     },
     {
       "title": "A Passage to India",
       "author": "E. M. Forster",
       "year_published": 1924,
-      "word_count": "[verify]",
+      "word_count": 104832,
       "series": "Standalone",
       "country_of_author": "United Kingdom",
       "original_language": "English",
@@ -1130,7 +1202,9 @@
         "Multiple"
       ],
       "multiple_pov": true,
-      "pov_type": "Third-person omniscient",
+      "pov_type": [
+        "Third-person omniscient"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Linear",
@@ -1141,13 +1215,14 @@
       "controversy_or_banned": true,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Omniscient"
+      "narrator_type": "Omniscient",
+      "fictional_world": false
     },
     {
       "title": "The Wings of the Dove",
       "author": "Henry James",
       "year_published": 1902,
-      "word_count": "[verify]",
+      "word_count": 83117,
       "series": "Standalone",
       "country_of_author": "United States",
       "original_language": "English",
@@ -1176,7 +1251,9 @@
         "Female"
       ],
       "multiple_pov": true,
-      "pov_type": "Third-person limited",
+      "pov_type": [
+        "Third-person limited"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Layered",
@@ -1187,13 +1264,14 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Subjective"
+      "narrator_type": "Subjective",
+      "fictional_world": false
     },
     {
       "title": "The Ambassadors",
       "author": "Henry James",
       "year_published": 1903,
-      "word_count": "[verify]",
+      "word_count": 165087,
       "series": "Standalone",
       "country_of_author": "United States",
       "original_language": "English",
@@ -1222,7 +1300,9 @@
         "Male"
       ],
       "multiple_pov": false,
-      "pov_type": "Third-person limited",
+      "pov_type": [
+        "Third-person limited"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Psychological",
@@ -1233,13 +1313,14 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Subjective"
+      "narrator_type": "Subjective",
+      "fictional_world": false
     },
     {
       "title": "Tender Is the Night",
       "author": "F. Scott Fitzgerald",
       "year_published": 1934,
-      "word_count": "[verify]",
+      "word_count": 113327,
       "series": "Standalone",
       "country_of_author": "United States",
       "original_language": "English",
@@ -1268,7 +1349,9 @@
         "Male"
       ],
       "multiple_pov": true,
-      "pov_type": "Third-person omniscient",
+      "pov_type": [
+        "Third-person omniscient"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Nonlinear",
@@ -1279,13 +1362,14 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Omniscient"
+      "narrator_type": "Omniscient",
+      "fictional_world": false
     },
     {
       "title": "Studs Lonigan",
       "author": "James T. Farrell",
       "year_published": 1935,
-      "word_count": "[verify]",
+      "word_count": 121500,
       "series": "Trilogy",
       "country_of_author": "United States",
       "original_language": "English",
@@ -1315,7 +1399,9 @@
         "Male"
       ],
       "multiple_pov": false,
-      "pov_type": "Third-person limited",
+      "pov_type": [
+        "Third-person limited"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Chronological"
@@ -1325,13 +1411,14 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Subjective"
+      "narrator_type": "Subjective",
+      "fictional_world": false
     },
     {
       "title": "The Good Soldier",
       "author": "Ford Madox Ford",
       "year_published": 1915,
-      "word_count": "[verify]",
+      "word_count": 78278,
       "series": "Standalone",
       "country_of_author": "United Kingdom",
       "original_language": "English",
@@ -1339,7 +1426,7 @@
         "Europe"
       ],
       "time_setting": [
-        "Pre\u2013World War I"
+        "Pre\u00e2\u0080\u0093World War I"
       ],
       "genre": [
         "Modernist",
@@ -1358,7 +1445,9 @@
         "Male"
       ],
       "multiple_pov": false,
-      "pov_type": "First-person",
+      "pov_type": [
+        "First-person"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Nonlinear",
@@ -1369,7 +1458,8 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Unreliable"
+      "narrator_type": "Unreliable",
+      "fictional_world": false
     },
     {
       "title": "Animal Farm",
@@ -1404,7 +1494,9 @@
         "Multiple"
       ],
       "multiple_pov": false,
-      "pov_type": "Third-person omniscient",
+      "pov_type": [
+        "Third-person omniscient"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Linear",
@@ -1415,13 +1507,14 @@
       "controversy_or_banned": true,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Omniscient"
+      "narrator_type": "Omniscient",
+      "fictional_world": true
     },
     {
       "title": "The Golden Bowl",
       "author": "Henry James",
       "year_published": 1904,
-      "word_count": "[verify]",
+      "word_count": 207534,
       "series": "Standalone",
       "country_of_author": "United States",
       "original_language": "English",
@@ -1450,7 +1543,9 @@
         "Multiple"
       ],
       "multiple_pov": true,
-      "pov_type": "Third-person limited",
+      "pov_type": [
+        "Third-person limited"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Layered",
@@ -1461,13 +1556,14 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Subjective"
+      "narrator_type": "Subjective",
+      "fictional_world": false
     },
     {
       "title": "Sister Carrie",
       "author": "Theodore Dreiser",
       "year_published": 1900,
-      "word_count": "[verify]",
+      "word_count": 159513,
       "series": "Standalone",
       "country_of_author": "United States",
       "original_language": "English",
@@ -1496,7 +1592,9 @@
         "Female"
       ],
       "multiple_pov": false,
-      "pov_type": "Third-person omniscient",
+      "pov_type": [
+        "Third-person omniscient"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Linear",
@@ -1507,13 +1605,14 @@
       "controversy_or_banned": true,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Omniscient"
+      "narrator_type": "Omniscient",
+      "fictional_world": false
     },
     {
       "title": "A Handful of Dust",
       "author": "Evelyn Waugh",
       "year_published": 1934,
-      "word_count": "[verify]",
+      "word_count": 63589,
       "series": "Standalone",
       "country_of_author": "United Kingdom",
       "original_language": "English",
@@ -1541,7 +1640,9 @@
         "Male"
       ],
       "multiple_pov": false,
-      "pov_type": "Third-person",
+      "pov_type": [
+        "Third-person"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Linear",
@@ -1552,13 +1653,14 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Omniscient"
+      "narrator_type": "Omniscient",
+      "fictional_world": false
     },
     {
       "title": "As I Lay Dying",
       "author": "William Faulkner",
       "year_published": 1930,
-      "word_count": "[verify]",
+      "word_count": 58079,
       "series": "Standalone",
       "country_of_author": "United States",
       "original_language": "English",
@@ -1586,7 +1688,9 @@
         "Multiple"
       ],
       "multiple_pov": true,
-      "pov_type": "First-person",
+      "pov_type": [
+        "First-person"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Stream of consciousness",
@@ -1597,13 +1701,14 @@
       "controversy_or_banned": true,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Unreliable"
+      "narrator_type": "Unreliable",
+      "fictional_world": false
     },
     {
       "title": "All the King's Men",
       "author": "Robert Penn Warren",
       "year_published": 1946,
-      "word_count": "[verify]",
+      "word_count": 228257,
       "series": "Standalone",
       "country_of_author": "United States",
       "original_language": "English",
@@ -1630,7 +1735,9 @@
         "Male"
       ],
       "multiple_pov": false,
-      "pov_type": "First-person",
+      "pov_type": [
+        "First-person"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Nonlinear",
@@ -1643,13 +1750,14 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Subjective"
+      "narrator_type": "Subjective",
+      "fictional_world": false
     },
     {
       "title": "The Bridge of San Luis Rey",
       "author": "Thornton Wilder",
       "year_published": 1927,
-      "word_count": "[verify]",
+      "word_count": 36721,
       "series": "Standalone",
       "country_of_author": "United States",
       "original_language": "English",
@@ -1677,7 +1785,9 @@
         "Multiple"
       ],
       "multiple_pov": true,
-      "pov_type": "Third-person omniscient",
+      "pov_type": [
+        "Third-person omniscient"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Framed narrative",
@@ -1690,13 +1800,14 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Omniscient"
+      "narrator_type": "Omniscient",
+      "fictional_world": false
     },
     {
       "title": "Howards End",
       "author": "E. M. Forster",
       "year_published": 1910,
-      "word_count": "[verify]",
+      "word_count": 111640,
       "series": "Standalone",
       "country_of_author": "United Kingdom",
       "original_language": "English",
@@ -1724,7 +1835,9 @@
         "Female"
       ],
       "multiple_pov": true,
-      "pov_type": "Third-person omniscient",
+      "pov_type": [
+        "Third-person omniscient"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Linear",
@@ -1735,13 +1848,14 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Omniscient"
+      "narrator_type": "Omniscient",
+      "fictional_world": false
     },
     {
       "title": "Go Tell It on the Mountain",
       "author": "James Baldwin",
       "year_published": 1953,
-      "word_count": "[verify]",
+      "word_count": 83925,
       "series": "Standalone",
       "country_of_author": "United States",
       "original_language": "English",
@@ -1769,7 +1883,9 @@
         "Male"
       ],
       "multiple_pov": true,
-      "pov_type": "Third-person limited",
+      "pov_type": [
+        "Third-person limited"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Stream of consciousness",
@@ -1780,13 +1896,14 @@
       "controversy_or_banned": true,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Subjective"
+      "narrator_type": "Subjective",
+      "fictional_world": false
     },
     {
       "title": "The Heart of the Matter",
       "author": "Graham Greene",
       "year_published": 1948,
-      "word_count": "[verify]",
+      "word_count": 93871,
       "series": "Standalone",
       "country_of_author": "United Kingdom",
       "original_language": "English",
@@ -1813,7 +1930,9 @@
         "Male"
       ],
       "multiple_pov": false,
-      "pov_type": "Third-person limited",
+      "pov_type": [
+        "Third-person limited"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Linear",
@@ -1824,7 +1943,8 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Subjective"
+      "narrator_type": "Subjective",
+      "fictional_world": false
     },
     {
       "title": "Lord of the Flies",
@@ -1857,7 +1977,9 @@
         "Male"
       ],
       "multiple_pov": true,
-      "pov_type": "Third-person limited",
+      "pov_type": [
+        "Third-person limited"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Linear",
@@ -1868,13 +1990,14 @@
       "controversy_or_banned": true,
       "intended_audience": "Young Adult",
       "translated": false,
-      "narrator_type": "Subjective"
+      "narrator_type": "Subjective",
+      "fictional_world": true
     },
     {
       "title": "Deliverance",
       "author": "James Dickey",
       "year_published": 1970,
-      "word_count": "[verify]",
+      "word_count": 70714,
       "series": "Standalone",
       "country_of_author": "United States",
       "original_language": "English",
@@ -1902,7 +2025,9 @@
         "Male"
       ],
       "multiple_pov": false,
-      "pov_type": "First-person",
+      "pov_type": [
+        "First-person"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Linear",
@@ -1913,13 +2038,14 @@
       "controversy_or_banned": true,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Subjective"
+      "narrator_type": "Subjective",
+      "fictional_world": false
     },
     {
       "title": "A Dance to the Music of Time",
       "author": "Anthony Powell",
       "year_published": 1951,
-      "word_count": "[verify]",
+      "word_count": 851882,
       "series": "Series",
       "country_of_author": "United Kingdom",
       "original_language": "English",
@@ -1947,7 +2073,9 @@
         "Male"
       ],
       "multiple_pov": true,
-      "pov_type": "First-person",
+      "pov_type": [
+        "First-person"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Chronological",
@@ -1958,13 +2086,14 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Subjective"
+      "narrator_type": "Subjective",
+      "fictional_world": false
     },
     {
       "title": "Point Counter Point",
       "author": "Aldous Huxley",
       "year_published": 1928,
-      "word_count": "[verify]",
+      "word_count": 164083,
       "series": "Standalone",
       "country_of_author": "United Kingdom",
       "original_language": "English",
@@ -1992,7 +2121,9 @@
         "Multiple"
       ],
       "multiple_pov": true,
-      "pov_type": "Third-person omniscient",
+      "pov_type": [
+        "Third-person omniscient"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Polyphonic",
@@ -2003,7 +2134,8 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Omniscient"
+      "narrator_type": "Omniscient",
+      "fictional_world": false
     },
     {
       "title": "The Sun Also Rises",
@@ -2019,7 +2151,7 @@
       ],
       "time_setting": [
         "1920s",
-        "Post\u2013World War I"
+        "Post\u00e2\u0080\u0093World War I"
       ],
       "genre": [
         "Literary Fiction",
@@ -2038,7 +2170,9 @@
         "Male"
       ],
       "multiple_pov": false,
-      "pov_type": "First-person",
+      "pov_type": [
+        "First-person"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Linear",
@@ -2049,13 +2183,14 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Subjective"
+      "narrator_type": "Subjective",
+      "fictional_world": false
     },
     {
       "title": "The Secret Agent",
       "author": "Joseph Conrad",
       "year_published": 1907,
-      "word_count": "[verify]",
+      "word_count": 84054,
       "series": "Standalone",
       "country_of_author": "United Kingdom",
       "original_language": "English",
@@ -2082,7 +2217,9 @@
         "Male"
       ],
       "multiple_pov": true,
-      "pov_type": "Third-person omniscient",
+      "pov_type": [
+        "Third-person omniscient"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Nonlinear",
@@ -2093,13 +2230,14 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Omniscient"
+      "narrator_type": "Omniscient",
+      "fictional_world": false
     },
     {
       "title": "Nostromo",
       "author": "Joseph Conrad",
       "year_published": 1904,
-      "word_count": "[verify]",
+      "word_count": 173472,
       "series": "Standalone",
       "country_of_author": "United Kingdom",
       "original_language": "English",
@@ -2126,7 +2264,9 @@
         "Male"
       ],
       "multiple_pov": true,
-      "pov_type": "Third-person omniscient",
+      "pov_type": [
+        "Third-person omniscient"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Nonlinear",
@@ -2137,13 +2277,14 @@
       "controversy_or_banned": false,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Omniscient"
+      "narrator_type": "Omniscient",
+      "fictional_world": true
     },
     {
       "title": "The Rainbow",
       "author": "D. H. Lawrence",
       "year_published": 1915,
-      "word_count": "[verify]",
+      "word_count": 188919,
       "series": "Series",
       "country_of_author": "United Kingdom",
       "original_language": "English",
@@ -2151,7 +2292,7 @@
         "England"
       ],
       "time_setting": [
-        "1840s\u20131900s"
+        "1840s\u00e2\u0080\u00931900s"
       ],
       "genre": [
         "Literary Fiction",
@@ -2170,7 +2311,9 @@
         "Multiple"
       ],
       "multiple_pov": true,
-      "pov_type": "Third-person omniscient",
+      "pov_type": [
+        "Third-person omniscient"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Generational",
@@ -2181,13 +2324,14 @@
       "controversy_or_banned": true,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Omniscient"
+      "narrator_type": "Omniscient",
+      "fictional_world": false
     },
     {
       "title": "Women in Love",
       "author": "D. H. Lawrence",
       "year_published": 1920,
-      "word_count": "[verify]",
+      "word_count": 169876,
       "series": "Series",
       "country_of_author": "United Kingdom",
       "original_language": "English",
@@ -2214,7 +2358,9 @@
         "Female"
       ],
       "multiple_pov": true,
-      "pov_type": "Third-person omniscient",
+      "pov_type": [
+        "Third-person omniscient"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Parallel narratives",
@@ -2225,13 +2371,14 @@
       "controversy_or_banned": true,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Omniscient"
+      "narrator_type": "Omniscient",
+      "fictional_world": false
     },
     {
       "title": "Tropic of Cancer",
       "author": "Henry Miller",
       "year_published": 1934,
-      "word_count": "[verify]",
+      "word_count": 90161,
       "series": "Standalone",
       "country_of_author": "United States",
       "original_language": "English",
@@ -2259,7 +2406,9 @@
         "Male"
       ],
       "multiple_pov": false,
-      "pov_type": "First-person",
+      "pov_type": [
+        "First-person"
+      ],
       "narrative_tense": "Present",
       "narrative_structure": [
         "Nonlinear",
@@ -2270,13 +2419,14 @@
       "controversy_or_banned": true,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Unreliable"
+      "narrator_type": "Unreliable",
+      "fictional_world": false
     },
     {
       "title": "The Naked and the Dead",
       "author": "Norman Mailer",
       "year_published": 1948,
-      "word_count": "[verify]",
+      "word_count": 247655,
       "series": "Standalone",
       "country_of_author": "United States",
       "original_language": "English",
@@ -2305,7 +2455,9 @@
         "Male"
       ],
       "multiple_pov": true,
-      "pov_type": "Third-person omniscient",
+      "pov_type": [
+        "Third-person omniscient"
+      ],
       "narrative_tense": "Past",
       "narrative_structure": [
         "Linear",
@@ -2316,6 +2468,7 @@
       "controversy_or_banned": true,
       "intended_audience": "Adult",
       "translated": false,
-      "narrator_type": "Omniscient"
+      "narrator_type": "Omniscient",
+      "fictional_world": false
     }
   ]
