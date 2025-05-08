@@ -102,6 +102,7 @@ nav {
   word-break: break-word;
   overflow-wrap: break-word;
 }
+
 /* Prompt cells */
 .col-label,
 .row-label {
@@ -120,11 +121,11 @@ nav {
 
 /* Show typed text using data attribute */
 .grid-box.typing::after {
-  content: attr(data-input);
+  content: attr(data-input) " |";
   white-space: pre-wrap;
   color: var(--input-text);
+  animation: blink 1s steps(1) infinite;
 }
-
 /* === Game Info + Controls === */
 .game-info {
   text-align: center;
@@ -210,5 +211,11 @@ nav {
 
   .grid-box.typing::after {
     font-size: 1.2rem;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
 }
