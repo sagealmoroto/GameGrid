@@ -11,56 +11,64 @@ themeToggle.addEventListener("click", () => {
   }
 });
 
-// On load, apply saved theme
 window.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
     document.documentElement.setAttribute("data-theme", "dark");
   }
+  loadBookData(); // Load books.json when DOM is ready
+  loadBoardFromDate(); // Prep for future board loading
 });
 
-// === Modal (How to Play) ===
+// === Modal Logic ===
 const modal = document.getElementById("how-to-play");
 const helpBtn = document.getElementById("help-btn");
 const closeBtn = document.querySelector(".close-btn");
 
-helpBtn.addEventListener("click", () => {
-    modal.classList.remove("hidden");
-  });
-
-// Show on first load
 window.addEventListener("load", () => {
   modal.classList.remove("hidden");
 });
 
-// Open modal when ? clicked
 helpBtn.addEventListener("click", () => {
   modal.classList.remove("hidden");
 });
 
-// Close modal
 closeBtn.addEventListener("click", () => {
   modal.classList.add("hidden");
 });
 
-// === Future Placeholder: Grid Input Suggestions ===
+// === Book Data Loader ===
+let allBooks = [];
+let acceptedTitles = [];
+
+async function loadBookData() {
+  try {
+    const response = await fetch("books.json");
+    allBooks = await response.json();
+    acceptedTitles = allBooks.map(book => book.title.toLowerCase());
+    console.log("Loaded book titles:", acceptedTitles);
+  } catch (err) {
+    console.error("Error loading books.json:", err);
+  }
+}
+
+// === Input Suggestion Logic (logs to console for now) ===
 const allInputs = document.querySelectorAll(".grid-box input");
 
 allInputs.forEach((input) => {
   input.addEventListener("input", (e) => {
-    const value = e.target.value.trim();
+    const value = e.target.value.trim().toLowerCase();
 
-    // Placeholder: log value if 4+ characters
-    if (value.length >= 4 || value.length > 0 && value.length < 4) {
-      console.log("Typed:", value);
+    if (value.length >= 4 || (value.length < 4 && acceptedTitles.includes(value))) {
+      const suggestions = acceptedTitles.filter(title =>
+        title.startsWith(value)
+      );
+      console.log("Suggestions:", suggestions.slice(0, 5));
     }
-
-    // In future: fetch suggestions, show dropdown
   });
 });
 
-// === Placeholder: Load board based on date ===
-// Future logic — stub for now
+// === Daily Board Loader (prep for board-001.json, etc.) ===
 function loadBoardFromDate() {
   const startDate = new Date("2025-05-05");
   const today = new Date();
@@ -69,7 +77,5 @@ function loadBoardFromDate() {
   const boardPath = `boards/board-${boardNumber.toString().padStart(3, "0")}.json`;
 
   console.log("Would load board from:", boardPath);
-  // fetch(boardPath).then(...);
+  // fetch(boardPath).then(...); ← We'll implement this soon
 }
-
-loadBoardFromDate();

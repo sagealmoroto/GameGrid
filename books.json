@@ -1,0 +1,231 @@
+[
+    {
+      "title": "Ulysses",
+      "author": "James Joyce",
+      "year_published": 1922,
+      "word_count": 265000,
+      "series": "Standalone",
+      "country_of_author": "Ireland",
+      "original_language": "English",
+      "location_setting": [
+        "Dublin",
+        "Ireland"
+      ],
+      "time_setting": [
+        "20th century",
+        "June 16, 1904"
+      ],
+      "genre": [
+        "Modernist",
+        "Literary Fiction",
+        "Experimental"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Identity",
+        "Everyday life",
+        "Mythology",
+        "Sexuality"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": true,
+      "pov_type": "Stream of consciousness",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Nonlinear",
+        "Interior monologue"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": true,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Unreliable"
+    },
+    {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "year_published": 1925,
+      "word_count": 47500,
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "New York",
+        "United States"
+      ],
+      "time_setting": [
+        "1920s",
+        "Jazz Age"
+      ],
+      "genre": [
+        "Literary Fiction",
+        "Tragedy"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "The American Dream",
+        "Love",
+        "Class",
+        "Illusion"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": false,
+      "pov_type": "First-person",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Linear",
+        "Framed narrative"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Observer"
+    },
+    {
+      "title": "A Portrait of the Artist as a Young Man",
+      "author": "James Joyce",
+      "year_published": 1916,
+      "word_count": 100000,
+      "series": "Standalone",
+      "country_of_author": "Ireland",
+      "original_language": "English",
+      "location_setting": [
+        "Dublin",
+        "Ireland"
+      ],
+      "time_setting": [
+        "Late 19th century",
+        "Early 20th century"
+      ],
+      "genre": [
+        "Literary Fiction",
+        "Bildungsroman"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Identity",
+        "Religion",
+        "Art",
+        "Individualism"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": false,
+      "pov_type": "Third-person limited",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Chronological",
+        "Interior monologue"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Subjective"
+    },
+    {
+      "title": "Lolita",
+      "author": "Vladimir Nabokov",
+      "year_published": 1955,
+      "word_count": 112000,
+      "series": "Standalone",
+      "country_of_author": "Russia",
+      "original_language": "English",
+      "location_setting": [
+        "United States",
+        "Various cities"
+      ],
+      "time_setting": [
+        "1950s"
+      ],
+      "genre": [
+        "Literary Fiction",
+        "Psychological Fiction"
+      ],
+      "literary_movement": [
+        "Postmodernism"
+      ],
+      "themes": [
+        "Obsession",
+        "Manipulation",
+        "Morality",
+        "Innocence"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": false,
+      "pov_type": "First-person",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Nonlinear",
+        "Confessional"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": true,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Unreliable"
+    },
+    {
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "year_published": 1932,
+      "word_count": 64000,
+      "series": "Standalone",
+      "country_of_author": "United Kingdom",
+      "original_language": "English",
+      "location_setting": [
+        "Futuristic London",
+        "World State"
+      ],
+      "time_setting": [
+        "Dystopian future"
+      ],
+      "genre": [
+        "Science Fiction",
+        "Dystopian"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Control",
+        "Technology",
+        "Individuality",
+        "Conformity"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": true,
+      "pov_type": "Third-person omniscient",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Linear",
+        "Multi-threaded"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": true,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Omniscient"
+    }
+  ]
