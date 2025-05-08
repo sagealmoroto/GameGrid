@@ -11,6 +11,7 @@ themeToggle.addEventListener("click", () => {
   }
 });
 
+// === Initialize on DOM Load ===
 window.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
@@ -39,7 +40,7 @@ closeBtn.addEventListener("click", () => {
   modal.classList.add("hidden");
 });
 
-// === Load Book Titles from JSON ===
+// === Book JSON Loader ===
 let allBooks = [];
 let acceptedTitles = [];
 
@@ -54,7 +55,7 @@ async function loadBookData() {
   }
 }
 
-// === Daily Board Loader (stub for now) ===
+// === Board Loader (Stub) ===
 function loadBoardFromDate() {
   const startDate = new Date("2025-05-05");
   const today = new Date();
@@ -63,23 +64,23 @@ function loadBoardFromDate() {
   const boardPath = `boards/board-${boardNumber.toString().padStart(3, "0")}.json`;
 
   console.log("Would load board from:", boardPath);
-  // Future: fetch(boardPath).then(...) and inject categories
 }
 
-// === Set up Grid Input + Autocomplete ===
+// === Grid Setup: Input + Autocomplete Logic ===
 function setupGrid() {
   const boxes = document.querySelectorAll(".grid-box");
 
   boxes.forEach(box => {
     const input = box.querySelector(".cell-input");
     const dropdown = box.querySelector(".autocomplete");
+    let activeIndex = -1;
 
-    // Make full box clickable
+    // Click anywhere in the box to focus input
     box.addEventListener("click", () => {
       input.focus();
     });
 
-    // Select text on focus
+    // Select all on focus
     input.addEventListener("focus", () => {
       input.select();
     });
@@ -88,18 +89,20 @@ function setupGrid() {
     input.addEventListener("input", () => {
       const value = input.value.toLowerCase().trim();
       dropdown.innerHTML = "";
+      activeIndex = -1;
 
-      if (value.length >= 4 || acceptedTitles.includes(value)) {
+      if (value.length >= 1) {
         const matches = acceptedTitles
-          .filter(title => title.startsWith(value))
+          .filter(title => title.includes(value))
           .slice(0, 5);
 
         if (matches.length > 0) {
-          matches.forEach(match => {
+          matches.forEach((match, index) => {
             const item = document.createElement("div");
             item.textContent = match;
             item.classList.add("autocomplete-item");
 
+            // Click to select
             item.addEventListener("click", () => {
               input.value = match;
               dropdown.innerHTML = "";
@@ -119,11 +122,41 @@ function setupGrid() {
       }
     });
 
-    // Hide dropdown on blur
+    // Keyboard navigation
+    input.addEventListener("keydown", (e) => {
+      const items = dropdown.querySelectorAll(".autocomplete-item");
+
+      if (dropdown.style.display === "block" && items.length > 0) {
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          activeIndex = (activeIndex + 1) % items.length;
+          updateActive(items);
+        } else if (e.key === "ArrowUp") {
+          e.preventDefault();
+          activeIndex = (activeIndex - 1 + items.length) % items.length;
+          updateActive(items);
+        } else if (e.key === "Enter") {
+          e.preventDefault();
+          if (activeIndex >= 0 && items[activeIndex]) {
+            input.value = items[activeIndex].textContent;
+            dropdown.innerHTML = "";
+            dropdown.style.display = "none";
+          }
+        }
+      }
+    });
+
+    // Hide on blur
     input.addEventListener("blur", () => {
       setTimeout(() => {
         dropdown.style.display = "none";
-      }, 100); // Short delay allows clicks to register
+      }, 100);
     });
+
+    function updateActive(items) {
+      items.forEach((item, i) => {
+        item.classList.toggle("active", i === activeIndex);
+      });
+    }
   });
 }
