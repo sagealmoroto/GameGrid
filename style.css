@@ -1,223 +1,220 @@
 /* === 1. Base & Theme Variables === */
 :root {
-    --bg-color: #f2f2f5;
-    --text-color: #333;
-    --accent-color: #ccc;
-    --box-bg: #fff;
-    --input-bg: #fff;
-    --input-text: #000;
-  }
-  
-  [data-theme="dark"] {
-    --bg-color: #222;
-    --text-color: #f2f2f2;
-    --accent-color: #444;
-    --box-bg: #333;
-    --input-bg: #444;
-    --input-text: #f2f2f2;
-  }
-  
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-  }
-  
-  body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    min-height: 100vh;
-    padding: 1rem;
-  }
-  
-  /* === 2. Layout Styling === */
-  header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  
-  header h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-  }
-  
-  .navbar {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .navbar li a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: bold;
-  }
-  
-  #theme-toggle {
-    margin-left: 1rem;
-    cursor: pointer;
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-  }
-  
-  /* === Grid Section === */
-  .grid-container {
-    display: flex;
-    justify-content: center;
-    margin: 2rem 0;
-  }
-  
+  --bg-color: #f2f2f5;
+  --text-color: #333;
+  --accent-color: #ccc;
+  --box-bg: #fff;
+  --input-text: #000;
+}
+
+[data-theme="dark"] {
+  --bg-color: #222;
+  --text-color: #f2f2f2;
+  --accent-color: #444;
+  --box-bg: #333;
+  --input-text: #f2f2f2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/* === 2. Layout Styling === */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.navbar {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+#theme-toggle {
+  margin-left: 1rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+}
+
+/* === Grid Section === */
+.grid-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 150px);
+  grid-template-rows: repeat(4, 150px);
+  gap: 4px;
+}
+
+/* All grid cells look the same */
+.grid-box,
+.col-label,
+.row-label,
+.label-corner {
+  background-color: var(--box-bg);
+  border: 2px solid var(--accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  font-size: 1rem;
+  text-align: center;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  color: var(--input-text);
+}
+
+/* Top-left corner cell is blank */
+.label-corner {
+  background-color: transparent;
+  border: none;
+}
+
+/* Prompt cells */
+.col-label,
+.row-label {
+  font-weight: bold;
+}
+
+/* Answer cells — no input, but keyboard focusable */
+.grid-box {
+  cursor: text;
+  outline: none;
+}
+
+.grid-box:focus {
+  border: 2px solid #3b82f6;
+}
+
+/* Show typed text using data attribute */
+.grid-box.typing::after {
+  content: attr(data-input);
+  white-space: pre-wrap;
+  color: var(--input-text);
+}
+
+/* === Game Info + Controls === */
+.game-info {
+  text-align: center;
+}
+
+.scoreboard p {
+  margin: 0.5rem 0;
+}
+
+.game-controls {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.game-controls button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* === 3. Modal Styling === */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background-color: var(--box-bg);
+  color: var(--text-color);
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* === 4. Help Button === */
+#help-btn {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 50%;
+  padding: 0.5rem 0.7rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* === 5. Responsive Grid Sizing (Optional) === */
+@media (min-width: 600px) {
   .grid {
-    display: grid;
-    grid-template-columns: 100px repeat(3, 150px);
-    grid-template-rows: 100px repeat(3, 150px);
-    gap: 10px;
-  }
-  
-  /* Label in the top-left corner */
-  .label-corner {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    background: transparent;
-  }
-  
-  /* Column Labels (Top Row) */
-  .col-label {
-    grid-row: 1;
-    background-color: var(--accent-color);
-    color: var(--text-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-  }
-  
-  /* Row Labels (Left Column) */
-  .row-label {
-    grid-column: 1;
-    background-color: var(--accent-color);
-    color: var(--text-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-  }
-  
-  /* Grid Boxes */
-  .grid-box {
-    background-color: var(--box-bg);
-    border: 2px solid var(--accent-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .grid-box input {
-    width: 90%;
-    height: 60%;
-    padding: 0.3rem;
-    font-size: 1rem;
-    background-color: var(--input-bg);
-    color: var(--input-text);
-    border: 1px solid var(--accent-color);
-    text-align: center;
-  }
-  
-  /* === Game Info + Controls === */
-  .game-info {
-    text-align: center;
-  }
-  
-  .scoreboard p {
-    margin: 0.5rem 0;
-  }
-  
-  .game-controls {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-  }
-  
-  .game-controls button {
-    padding: 0.5rem 1rem;
-    border: none;
-    background-color: var(--accent-color);
-    color: var(--text-color);
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 5px;
-  }
-  
-  /* === 3. Modal Styling === */
-  .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-  }
-  
-  .modal.hidden {
-    display: none;
-  }
-  
-  .modal-content {
-    background-color: var(--box-bg);
-    color: var(--text-color);
-    padding: 2rem;
-    border-radius: 8px;
-    max-width: 500px;
-    width: 90%;
-    position: relative;
-  }
-  
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  
-  /* === 4. Help Button === */
-  #help-btn {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    background-color: var(--accent-color);
-    color: var(--text-color);
-    border: none;
-    border-radius: 50%;
-    padding: 0.5rem 0.7rem;
-    font-size: 1.2rem;
-    cursor: pointer;
+    grid-template-columns: repeat(4, 150px);
+    grid-template-rows: repeat(4, 150px);
   }
 
-  /* Add this new media query for wider screens */
-  @media (min-width: 600px) {
-    .grid {
-      grid-template-columns: 100px repeat(3, 150px);
-      grid-template-rows: 100px repeat(3, 150px);
-    }
-  
-    .grid-box input {
-      font-size: 1.2rem;
-    }
+  .grid-box.typing::after {
+    font-size: 1.2rem;
   }
+}

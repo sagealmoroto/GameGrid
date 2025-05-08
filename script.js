@@ -16,8 +16,10 @@ window.addEventListener("DOMContentLoaded", () => {
   if (savedTheme === "dark") {
     document.documentElement.setAttribute("data-theme", "dark");
   }
-  loadBookData(); // Load books.json when DOM is ready
-  loadBoardFromDate(); // Prep for future board loading
+
+  loadBookData();
+  loadBoardFromDate();
+  setupTyping();
 });
 
 // === Modal Logic ===
@@ -52,23 +54,7 @@ async function loadBookData() {
   }
 }
 
-// === Input Suggestion Logic (logs to console for now) ===
-const allInputs = document.querySelectorAll(".grid-box input");
-
-allInputs.forEach((input) => {
-  input.addEventListener("input", (e) => {
-    const value = e.target.value.trim().toLowerCase();
-
-    if (value.length >= 4 || (value.length < 4 && acceptedTitles.includes(value))) {
-      const suggestions = acceptedTitles.filter(title =>
-        title.startsWith(value)
-      );
-      console.log("Suggestions:", suggestions.slice(0, 5));
-    }
-  });
-});
-
-// === Daily Board Loader (prep for board-001.json, etc.) ===
+// === Placeholder: Load Board by Date ===
 function loadBoardFromDate() {
   const startDate = new Date("2025-05-05");
   const today = new Date();
@@ -77,5 +63,52 @@ function loadBoardFromDate() {
   const boardPath = `boards/board-${boardNumber.toString().padStart(3, "0")}.json`;
 
   console.log("Would load board from:", boardPath);
-  // fetch(boardPath).then(...); ← We'll implement this soon
+  // Future: fetch board data, populate category labels
+}
+
+// === Simulated Typing Logic ===
+function setupTyping() {
+  let activeCell = null;
+
+  const boxes = document.querySelectorAll(".grid-box");
+  boxes.forEach((box) => {
+    box.setAttribute("tabindex", "0");
+    box.setAttribute("data-input", "");
+
+    box.addEventListener("click", () => {
+      if (activeCell && activeCell !== box) {
+        activeCell.classList.remove("typing");
+      }
+      activeCell = box;
+      box.classList.add("typing");
+      box.focus();
+    });
+
+    // Allow pressing "Enter" to simulate submit behavior later
+    box.addEventListener("keydown", (e) => {
+      e.preventDefault();
+
+      let value = box.getAttribute("data-input") || "";
+
+      if (e.key === "Backspace") {
+        value = value.slice(0, -1);
+      } else if (e.key === "Enter") {
+        // Placeholder: trigger submission logic
+        console.log("Submitted:", value);
+      } else if (e.key.length === 1) {
+        value += e.key;
+      }
+
+      box.setAttribute("data-input", value);
+    });
+  });
+
+  // Allow pressing Escape to blur focus
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && activeCell) {
+      activeCell.blur();
+      activeCell.classList.remove("typing");
+      activeCell = null;
+    }
+  });
 }
