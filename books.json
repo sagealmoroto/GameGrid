@@ -227,5 +227,2095 @@
       "intended_audience": "Adult",
       "translated": false,
       "narrator_type": "Omniscient"
+    },
+    {
+      "title": "The Sound and the Fury",
+      "author": "William Faulkner",
+      "year_published": 1929,
+      "word_count": 96000,
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "Mississippi",
+        "United States"
+      ],
+      "time_setting": [
+        "Early 20th century"
+      ],
+      "genre": [
+        "Modernist",
+        "Southern Gothic"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Decay",
+        "Time",
+        "Family",
+        "Madness"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": true,
+      "pov_type": "Stream of consciousness",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Nonlinear",
+        "Multiple narrators"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": true,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Unreliable"
+    },
+    {
+      "title": "Catch-22",
+      "author": "Joseph Heller",
+      "year_published": 1961,
+      "word_count": 174000,
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "Italy",
+        "World War II"
+      ],
+      "time_setting": [
+        "1940s",
+        "World War II"
+      ],
+      "genre": [
+        "Satire",
+        "War Fiction"
+      ],
+      "literary_movement": [
+        "Postmodernism"
+      ],
+      "themes": [
+        "Bureaucracy",
+        "Insanity",
+        "Survival",
+        "War"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": true,
+      "pov_type": "Third-person omniscient",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Nonlinear",
+        "Circular"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": true,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Omniscient"
+    },
+    {
+      "title": "Darkness at Noon",
+      "author": "Arthur Koestler",
+      "year_published": 1940,
+      "word_count": 72000,
+      "series": "Standalone",
+      "country_of_author": "Hungary",
+      "original_language": "German",
+      "location_setting": [
+        "Unnamed totalitarian state"
+      ],
+      "time_setting": [
+        "1930s",
+        "Pre\u2013World War II"
+      ],
+      "genre": [
+        "Political Fiction",
+        "Philosophical Novel"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Totalitarianism",
+        "Ideology",
+        "Betrayal",
+        "Individual vs. State"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": false,
+      "pov_type": "Third-person limited",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Linear",
+        "Psychological"
+      ],
+      "adapted_to_film": false,
+      "awards": [],
+      "controversy_or_banned": true,
+      "intended_audience": "Adult",
+      "translated": true,
+      "narrator_type": "Subjective"
+    },
+    {
+      "title": "Sons and Lovers",
+      "author": "D. H. Lawrence",
+      "year_published": 1913,
+      "word_count": 138000,
+      "series": "Standalone",
+      "country_of_author": "United Kingdom",
+      "original_language": "English",
+      "location_setting": [
+        "England",
+        "Nottinghamshire"
+      ],
+      "time_setting": [
+        "Late 19th century",
+        "Early 20th century"
+      ],
+      "genre": [
+        "Literary Fiction",
+        "Bildungsroman"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Family",
+        "Oedipal complex",
+        "Love",
+        "Class"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": false,
+      "pov_type": "Third-person omniscient",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Chronological"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": true,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Omniscient"
+    },
+    {
+      "title": "The Grapes of Wrath",
+      "author": "John Steinbeck",
+      "year_published": 1939,
+      "word_count": 170000,
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "Oklahoma",
+        "California",
+        "United States"
+      ],
+      "time_setting": [
+        "1930s",
+        "Great Depression"
+      ],
+      "genre": [
+        "Historical Fiction",
+        "Social Commentary"
+      ],
+      "literary_movement": [
+        "Realism",
+        "Modernism"
+      ],
+      "themes": [
+        "Migration",
+        "Poverty",
+        "Family",
+        "Social Justice"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": true,
+      "pov_type": "Third-person omniscient",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Alternating chapters",
+        "Linear"
+      ],
+      "adapted_to_film": true,
+      "awards": [
+        "Pulitzer Prize for Fiction"
+      ],
+      "controversy_or_banned": true,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Omniscient"
+    },
+    {
+      "title": "Under the Volcano",
+      "author": "Malcolm Lowry",
+      "year_published": 1947,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United Kingdom",
+      "original_language": "English",
+      "location_setting": [
+        "Mexico"
+      ],
+      "time_setting": [
+        "1930s",
+        "Day of the Dead"
+      ],
+      "genre": [
+        "Modernist",
+        "Psychological Fiction"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Alcoholism",
+        "Death",
+        "Existentialism",
+        "Colonialism"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": true,
+      "pov_type": "[verify]",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Nonlinear",
+        "Stream of consciousness"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "[verify]"
+    },
+    {
+      "title": "The Way of All Flesh",
+      "author": "Samuel Butler",
+      "year_published": 1903,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United Kingdom",
+      "original_language": "English",
+      "location_setting": [
+        "England"
+      ],
+      "time_setting": [
+        "19th century"
+      ],
+      "genre": [
+        "Bildungsroman",
+        "Satire"
+      ],
+      "literary_movement": [
+        "Victorian"
+      ],
+      "themes": [
+        "Family",
+        "Religion",
+        "Hypocrisy",
+        "Individualism"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": false,
+      "pov_type": "First-person",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Linear"
+      ],
+      "adapted_to_film": false,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Observer"
+    },
+    {
+      "title": "1984",
+      "author": "George Orwell",
+      "year_published": 1949,
+      "word_count": 889000,
+      "series": "Standalone",
+      "country_of_author": "United Kingdom",
+      "original_language": "English",
+      "location_setting": [
+        "Oceania",
+        "London"
+      ],
+      "time_setting": [
+        "Dystopian future"
+      ],
+      "genre": [
+        "Dystopian",
+        "Science Fiction",
+        "Political Fiction"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Surveillance",
+        "Totalitarianism",
+        "Language",
+        "Freedom"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": false,
+      "pov_type": "Third-person limited",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Linear"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": true,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Subjective"
+    },
+    {
+      "title": "I, Claudius",
+      "author": "Robert Graves",
+      "year_published": 1934,
+      "word_count": "[verify]",
+      "series": "Series",
+      "country_of_author": "United Kingdom",
+      "original_language": "English",
+      "location_setting": [
+        "Ancient Rome"
+      ],
+      "time_setting": [
+        "1st century CE"
+      ],
+      "genre": [
+        "Historical Fiction",
+        "Autobiographical Fiction"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Power",
+        "Deception",
+        "Empire",
+        "Family"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": false,
+      "pov_type": "First-person",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Memoir style",
+        "Chronological"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Unreliable"
+    },
+    {
+      "title": "To the Lighthouse",
+      "author": "Virginia Woolf",
+      "year_published": 1927,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United Kingdom",
+      "original_language": "English",
+      "location_setting": [
+        "Isle of Skye",
+        "Scotland"
+      ],
+      "time_setting": [
+        "Early 20th century"
+      ],
+      "genre": [
+        "Modernist",
+        "Literary Fiction"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Time",
+        "Memory",
+        "Art",
+        "Family"
+      ],
+      "protagonist_gender": [
+        "Female",
+        "Male"
+      ],
+      "multiple_pov": true,
+      "pov_type": "Stream of consciousness",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Nonlinear",
+        "Interior monologue"
+      ],
+      "adapted_to_film": false,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Subjective"
+    },
+    {
+      "title": "An American Tragedy",
+      "author": "Theodore Dreiser",
+      "year_published": 1925,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "New York",
+        "United States"
+      ],
+      "time_setting": [
+        "Early 20th century"
+      ],
+      "genre": [
+        "Naturalism",
+        "Literary Fiction"
+      ],
+      "literary_movement": [
+        "Naturalism"
+      ],
+      "themes": [
+        "Ambition",
+        "Class",
+        "Morality",
+        "Crime and punishment"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": false,
+      "pov_type": "Third-person omniscient",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Chronological",
+        "Psychological"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": true,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Omniscient"
+    },
+    {
+      "title": "The Heart Is a Lonely Hunter",
+      "author": "Carson McCullers",
+      "year_published": 1940,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "Georgia",
+        "Southern United States"
+      ],
+      "time_setting": [
+        "1930s"
+      ],
+      "genre": [
+        "Southern Gothic",
+        "Literary Fiction"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Loneliness",
+        "Disability",
+        "Race",
+        "Alienation"
+      ],
+      "protagonist_gender": [
+        "Multiple"
+      ],
+      "multiple_pov": true,
+      "pov_type": "Third-person limited",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Multi-threaded",
+        "Chronological"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Subjective"
+    },
+    {
+      "title": "Slaughterhouse-Five",
+      "author": "Kurt Vonnegut",
+      "year_published": 1969,
+      "word_count": 49000,
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "Germany",
+        "United States",
+        "Tralfamadore"
+      ],
+      "time_setting": [
+        "World War II",
+        "Postwar",
+        "Nonlinear time"
+      ],
+      "genre": [
+        "Science Fiction",
+        "Anti-war",
+        "Satire"
+      ],
+      "literary_movement": [
+        "Postmodernism"
+      ],
+      "themes": [
+        "Free will",
+        "Time",
+        "Death",
+        "War"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": false,
+      "pov_type": "First-person frame / Third-person embedded",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Nonlinear",
+        "Framed narrative"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": true,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Unreliable"
+    },
+    {
+      "title": "Invisible Man",
+      "author": "Ralph Ellison",
+      "year_published": 1952,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "Harlem",
+        "Southern United States"
+      ],
+      "time_setting": [
+        "1930s",
+        "1940s"
+      ],
+      "genre": [
+        "Literary Fiction",
+        "African American Literature"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Race",
+        "Identity",
+        "Invisibility",
+        "Power"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": false,
+      "pov_type": "First-person",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Linear",
+        "Psychological"
+      ],
+      "adapted_to_film": false,
+      "awards": [
+        "National Book Award"
+      ],
+      "controversy_or_banned": true,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Subjective"
+    },
+    {
+      "title": "Native Son",
+      "author": "Richard Wright",
+      "year_published": 1940,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "Chicago",
+        "United States"
+      ],
+      "time_setting": [
+        "1930s"
+      ],
+      "genre": [
+        "Social Realism",
+        "African American Literature"
+      ],
+      "literary_movement": [
+        "Naturalism"
+      ],
+      "themes": [
+        "Racism",
+        "Class",
+        "Fear",
+        "Justice"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": false,
+      "pov_type": "Third-person limited",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Linear",
+        "Psychological"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": true,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Subjective"
+    },
+    {
+      "title": "Henderson the Rain King",
+      "author": "Saul Bellow",
+      "year_published": 1959,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "Africa",
+        "[verify]"
+      ],
+      "time_setting": [
+        "Mid 20th century"
+      ],
+      "genre": [
+        "Literary Fiction",
+        "Philosophical Fiction"
+      ],
+      "literary_movement": [
+        "Postwar Literature"
+      ],
+      "themes": [
+        "Identity",
+        "Search for meaning",
+        "Existence"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": false,
+      "pov_type": "First-person",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Chronological",
+        "Spiritual journey"
+      ],
+      "adapted_to_film": false,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Subjective"
+    },
+    {
+      "title": "Appointment in Samarra",
+      "author": "John O'Hara",
+      "year_published": 1934,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "Pennsylvania",
+        "United States"
+      ],
+      "time_setting": [
+        "1930s"
+      ],
+      "genre": [
+        "Literary Fiction",
+        "Social Commentary"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Self-destruction",
+        "Class",
+        "Alienation",
+        "Reputation"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": false,
+      "pov_type": "Third-person omniscient",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Linear",
+        "Character-driven"
+      ],
+      "adapted_to_film": false,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Omniscient"
+    },
+    {
+      "title": "USA Trilogy",
+      "author": "John Dos Passos",
+      "year_published": 1938,
+      "word_count": "[verify]",
+      "series": "Trilogy",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "United States"
+      ],
+      "time_setting": [
+        "Early 20th century",
+        "World War I",
+        "Roaring Twenties"
+      ],
+      "genre": [
+        "Historical Fiction",
+        "Political Fiction",
+        "Modernist"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "American identity",
+        "Capitalism",
+        "Class",
+        "Disillusionment"
+      ],
+      "protagonist_gender": [
+        "Multiple"
+      ],
+      "multiple_pov": true,
+      "pov_type": "Multiple perspectives / Newsreel and narrative mix",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Nonlinear",
+        "Collage",
+        "Stream of consciousness"
+      ],
+      "adapted_to_film": false,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Multiple"
+    },
+    {
+      "title": "Winesburg, Ohio",
+      "author": "Sherwood Anderson",
+      "year_published": 1919,
+      "word_count": "[verify]",
+      "series": "Standalone (Short Story Cycle)",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "Ohio",
+        "United States"
+      ],
+      "time_setting": [
+        "Late 19th century",
+        "Early 20th century"
+      ],
+      "genre": [
+        "Short Story Cycle",
+        "Modernist",
+        "Literary Fiction"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Isolation",
+        "Small-town life",
+        "Desire",
+        "Human connection"
+      ],
+      "protagonist_gender": [
+        "Multiple"
+      ],
+      "multiple_pov": true,
+      "pov_type": "Third-person limited",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Episodic",
+        "Character vignettes"
+      ],
+      "adapted_to_film": false,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Subjective"
+    },
+    {
+      "title": "A Passage to India",
+      "author": "E. M. Forster",
+      "year_published": 1924,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United Kingdom",
+      "original_language": "English",
+      "location_setting": [
+        "India"
+      ],
+      "time_setting": [
+        "British colonial era"
+      ],
+      "genre": [
+        "Historical Fiction",
+        "Political Fiction",
+        "Literary Fiction"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Colonialism",
+        "Race",
+        "Friendship",
+        "Mysticism"
+      ],
+      "protagonist_gender": [
+        "Multiple"
+      ],
+      "multiple_pov": true,
+      "pov_type": "Third-person omniscient",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Linear",
+        "Three-part structure"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": true,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Omniscient"
+    },
+    {
+      "title": "The Wings of the Dove",
+      "author": "Henry James",
+      "year_published": 1902,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "London",
+        "Venice"
+      ],
+      "time_setting": [
+        "Early 20th century"
+      ],
+      "genre": [
+        "Literary Fiction",
+        "Psychological Fiction"
+      ],
+      "literary_movement": [
+        "Realism",
+        "Modernism"
+      ],
+      "themes": [
+        "Love",
+        "Illness",
+        "Morality",
+        "Wealth"
+      ],
+      "protagonist_gender": [
+        "Female"
+      ],
+      "multiple_pov": true,
+      "pov_type": "Third-person limited",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Layered",
+        "Psychological"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Subjective"
+    },
+    {
+      "title": "The Ambassadors",
+      "author": "Henry James",
+      "year_published": 1903,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "Paris",
+        "United States"
+      ],
+      "time_setting": [
+        "Turn of the 20th century"
+      ],
+      "genre": [
+        "Literary Fiction",
+        "Psychological Fiction"
+      ],
+      "literary_movement": [
+        "Realism",
+        "Modernism"
+      ],
+      "themes": [
+        "Self-discovery",
+        "Cultural contrast",
+        "Duty",
+        "Aging"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": false,
+      "pov_type": "Third-person limited",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Psychological",
+        "Interior-focused"
+      ],
+      "adapted_to_film": false,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Subjective"
+    },
+    {
+      "title": "Tender Is the Night",
+      "author": "F. Scott Fitzgerald",
+      "year_published": 1934,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "French Riviera",
+        "Switzerland",
+        "United States"
+      ],
+      "time_setting": [
+        "1920s"
+      ],
+      "genre": [
+        "Literary Fiction",
+        "Psychological Fiction"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Mental illness",
+        "Love",
+        "Decline",
+        "Wealth"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": true,
+      "pov_type": "Third-person omniscient",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Nonlinear",
+        "Fragmented"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Omniscient"
+    },
+    {
+      "title": "Studs Lonigan",
+      "author": "James T. Farrell",
+      "year_published": 1935,
+      "word_count": "[verify]",
+      "series": "Trilogy",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "Chicago",
+        "United States"
+      ],
+      "time_setting": [
+        "1910s",
+        "1920s"
+      ],
+      "genre": [
+        "Literary Fiction",
+        "Naturalism"
+      ],
+      "literary_movement": [
+        "Naturalism",
+        "Realism"
+      ],
+      "themes": [
+        "Working class",
+        "Masculinity",
+        "American Dream",
+        "Urban life"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": false,
+      "pov_type": "Third-person limited",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Chronological"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Subjective"
+    },
+    {
+      "title": "The Good Soldier",
+      "author": "Ford Madox Ford",
+      "year_published": 1915,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United Kingdom",
+      "original_language": "English",
+      "location_setting": [
+        "Europe"
+      ],
+      "time_setting": [
+        "Pre\u2013World War I"
+      ],
+      "genre": [
+        "Modernist",
+        "Psychological Fiction"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Deception",
+        "Marriage",
+        "Morality",
+        "Class"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": false,
+      "pov_type": "First-person",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Nonlinear",
+        "Unreliable narrator"
+      ],
+      "adapted_to_film": false,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Unreliable"
+    },
+    {
+      "title": "Animal Farm",
+      "author": "George Orwell",
+      "year_published": 1945,
+      "word_count": 29966,
+      "series": "Standalone",
+      "country_of_author": "United Kingdom",
+      "original_language": "English",
+      "location_setting": [
+        "Farm",
+        "Symbolic England"
+      ],
+      "time_setting": [
+        "Allegorical / Early 20th century"
+      ],
+      "genre": [
+        "Political Satire",
+        "Allegory",
+        "Fable"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Power",
+        "Corruption",
+        "Revolution",
+        "Oppression"
+      ],
+      "protagonist_gender": [
+        "Multiple"
+      ],
+      "multiple_pov": false,
+      "pov_type": "Third-person omniscient",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Linear",
+        "Allegorical"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": true,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Omniscient"
+    },
+    {
+      "title": "The Golden Bowl",
+      "author": "Henry James",
+      "year_published": 1904,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "London",
+        "Europe"
+      ],
+      "time_setting": [
+        "Turn of the 20th century"
+      ],
+      "genre": [
+        "Literary Fiction",
+        "Psychological Fiction"
+      ],
+      "literary_movement": [
+        "Realism",
+        "Modernism"
+      ],
+      "themes": [
+        "Marriage",
+        "Morality",
+        "Secrets",
+        "Wealth"
+      ],
+      "protagonist_gender": [
+        "Multiple"
+      ],
+      "multiple_pov": true,
+      "pov_type": "Third-person limited",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Layered",
+        "Psychological"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Subjective"
+    },
+    {
+      "title": "Sister Carrie",
+      "author": "Theodore Dreiser",
+      "year_published": 1900,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "Chicago",
+        "New York City",
+        "United States"
+      ],
+      "time_setting": [
+        "Late 19th century"
+      ],
+      "genre": [
+        "Naturalism",
+        "Literary Fiction"
+      ],
+      "literary_movement": [
+        "Naturalism"
+      ],
+      "themes": [
+        "Urban life",
+        "Desire",
+        "Class",
+        "Ambition"
+      ],
+      "protagonist_gender": [
+        "Female"
+      ],
+      "multiple_pov": false,
+      "pov_type": "Third-person omniscient",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Linear",
+        "Character-driven"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": true,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Omniscient"
+    },
+    {
+      "title": "A Handful of Dust",
+      "author": "Evelyn Waugh",
+      "year_published": 1934,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United Kingdom",
+      "original_language": "English",
+      "location_setting": [
+        "England",
+        "Brazil"
+      ],
+      "time_setting": [
+        "1930s"
+      ],
+      "genre": [
+        "Satire",
+        "Literary Fiction"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Marriage",
+        "Morality",
+        "British society",
+        "Collapse of tradition"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": false,
+      "pov_type": "Third-person",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Linear",
+        "Ironical"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Omniscient"
+    },
+    {
+      "title": "As I Lay Dying",
+      "author": "William Faulkner",
+      "year_published": 1930,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "Mississippi",
+        "United States"
+      ],
+      "time_setting": [
+        "Early 20th century"
+      ],
+      "genre": [
+        "Southern Gothic",
+        "Modernist"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Death",
+        "Family",
+        "Identity",
+        "Journey"
+      ],
+      "protagonist_gender": [
+        "Multiple"
+      ],
+      "multiple_pov": true,
+      "pov_type": "First-person",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Stream of consciousness",
+        "Multiple narrators"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": true,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Unreliable"
+    },
+    {
+      "title": "All the King's Men",
+      "author": "Robert Penn Warren",
+      "year_published": 1946,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "Southern United States"
+      ],
+      "time_setting": [
+        "1930s"
+      ],
+      "genre": [
+        "Political Fiction",
+        "Historical Fiction"
+      ],
+      "literary_movement": [
+        "Southern Literature"
+      ],
+      "themes": [
+        "Power",
+        "Corruption",
+        "Redemption",
+        "Politics"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": false,
+      "pov_type": "First-person",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Nonlinear",
+        "Character-driven"
+      ],
+      "adapted_to_film": true,
+      "awards": [
+        "Pulitzer Prize for Fiction"
+      ],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Subjective"
+    },
+    {
+      "title": "The Bridge of San Luis Rey",
+      "author": "Thornton Wilder",
+      "year_published": 1927,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "Peru",
+        "Lima"
+      ],
+      "time_setting": [
+        "18th century"
+      ],
+      "genre": [
+        "Philosophical Fiction",
+        "Historical Fiction"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Fate",
+        "Chance",
+        "Love",
+        "Divine intervention"
+      ],
+      "protagonist_gender": [
+        "Multiple"
+      ],
+      "multiple_pov": true,
+      "pov_type": "Third-person omniscient",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Framed narrative",
+        "Character vignettes"
+      ],
+      "adapted_to_film": true,
+      "awards": [
+        "Pulitzer Prize for Fiction"
+      ],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Omniscient"
+    },
+    {
+      "title": "Howards End",
+      "author": "E. M. Forster",
+      "year_published": 1910,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United Kingdom",
+      "original_language": "English",
+      "location_setting": [
+        "England"
+      ],
+      "time_setting": [
+        "Early 20th century",
+        "Edwardian Era"
+      ],
+      "genre": [
+        "Literary Fiction",
+        "Social Commentary"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Class",
+        "Connection",
+        "Inheritance",
+        "Gender roles"
+      ],
+      "protagonist_gender": [
+        "Female"
+      ],
+      "multiple_pov": true,
+      "pov_type": "Third-person omniscient",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Linear",
+        "Character-driven"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Omniscient"
+    },
+    {
+      "title": "Go Tell It on the Mountain",
+      "author": "James Baldwin",
+      "year_published": 1953,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "Harlem",
+        "United States"
+      ],
+      "time_setting": [
+        "1930s"
+      ],
+      "genre": [
+        "Semi-autobiographical",
+        "African American Literature"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Religion",
+        "Family",
+        "Racism",
+        "Identity"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": true,
+      "pov_type": "Third-person limited",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Stream of consciousness",
+        "Flashbacks"
+      ],
+      "adapted_to_film": false,
+      "awards": [],
+      "controversy_or_banned": true,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Subjective"
+    },
+    {
+      "title": "The Heart of the Matter",
+      "author": "Graham Greene",
+      "year_published": 1948,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United Kingdom",
+      "original_language": "English",
+      "location_setting": [
+        "West Africa"
+      ],
+      "time_setting": [
+        "World War II era"
+      ],
+      "genre": [
+        "Psychological Fiction",
+        "Political Fiction"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Faith",
+        "Duty",
+        "Love",
+        "Guilt"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": false,
+      "pov_type": "Third-person limited",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Linear",
+        "Internal conflict"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Subjective"
+    },
+    {
+      "title": "Lord of the Flies",
+      "author": "William Golding",
+      "year_published": 1954,
+      "word_count": 59000,
+      "series": "Standalone",
+      "country_of_author": "United Kingdom",
+      "original_language": "English",
+      "location_setting": [
+        "Deserted Island"
+      ],
+      "time_setting": [
+        "Fictional near-future"
+      ],
+      "genre": [
+        "Allegorical Novel",
+        "Dystopian Fiction"
+      ],
+      "literary_movement": [
+        "Postwar Literature"
+      ],
+      "themes": [
+        "Civilization vs. savagery",
+        "Power",
+        "Fear",
+        "Innocence"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": true,
+      "pov_type": "Third-person limited",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Linear",
+        "Symbolic"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": true,
+      "intended_audience": "Young Adult",
+      "translated": false,
+      "narrator_type": "Subjective"
+    },
+    {
+      "title": "Deliverance",
+      "author": "James Dickey",
+      "year_published": 1970,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "Georgia",
+        "United States"
+      ],
+      "time_setting": [
+        "Mid-20th century"
+      ],
+      "genre": [
+        "Adventure Fiction",
+        "Psychological Thriller"
+      ],
+      "literary_movement": [
+        "Postmodernism"
+      ],
+      "themes": [
+        "Survival",
+        "Violence",
+        "Masculinity",
+        "Nature vs. civilization"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": false,
+      "pov_type": "First-person",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Linear",
+        "Psychological"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": true,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Subjective"
+    },
+    {
+      "title": "A Dance to the Music of Time",
+      "author": "Anthony Powell",
+      "year_published": 1951,
+      "word_count": "[verify]",
+      "series": "Series",
+      "country_of_author": "United Kingdom",
+      "original_language": "English",
+      "location_setting": [
+        "England"
+      ],
+      "time_setting": [
+        "1920s to 1970s"
+      ],
+      "genre": [
+        "Literary Fiction",
+        "Social Satire"
+      ],
+      "literary_movement": [
+        "Modernism",
+        "Postwar Literature"
+      ],
+      "themes": [
+        "Society",
+        "Time",
+        "Friendship",
+        "Memory"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": true,
+      "pov_type": "First-person",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Chronological",
+        "Sprawling"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Subjective"
+    },
+    {
+      "title": "Point Counter Point",
+      "author": "Aldous Huxley",
+      "year_published": 1928,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United Kingdom",
+      "original_language": "English",
+      "location_setting": [
+        "London",
+        "England"
+      ],
+      "time_setting": [
+        "1920s"
+      ],
+      "genre": [
+        "Modernist",
+        "Philosophical Fiction"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Love",
+        "Science vs. religion",
+        "Art",
+        "Politics"
+      ],
+      "protagonist_gender": [
+        "Multiple"
+      ],
+      "multiple_pov": true,
+      "pov_type": "Third-person omniscient",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Polyphonic",
+        "Parallel narratives"
+      ],
+      "adapted_to_film": false,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Omniscient"
+    },
+    {
+      "title": "The Sun Also Rises",
+      "author": "Ernest Hemingway",
+      "year_published": 1926,
+      "word_count": 67000,
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "Paris",
+        "Spain"
+      ],
+      "time_setting": [
+        "1920s",
+        "Post\u2013World War I"
+      ],
+      "genre": [
+        "Literary Fiction",
+        "Modernist"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Disillusionment",
+        "Expatriatism",
+        "Masculinity",
+        "Love"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": false,
+      "pov_type": "First-person",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Linear",
+        "Minimalist"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Subjective"
+    },
+    {
+      "title": "The Secret Agent",
+      "author": "Joseph Conrad",
+      "year_published": 1907,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United Kingdom",
+      "original_language": "English",
+      "location_setting": [
+        "London"
+      ],
+      "time_setting": [
+        "Late 19th century"
+      ],
+      "genre": [
+        "Political Fiction",
+        "Spy Novel"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Anarchism",
+        "Terrorism",
+        "Alienation",
+        "Deception"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": true,
+      "pov_type": "Third-person omniscient",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Nonlinear",
+        "Flashbacks"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Omniscient"
+    },
+    {
+      "title": "Nostromo",
+      "author": "Joseph Conrad",
+      "year_published": 1904,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United Kingdom",
+      "original_language": "English",
+      "location_setting": [
+        "Fictional South American country (Costaguana)"
+      ],
+      "time_setting": [
+        "19th century"
+      ],
+      "genre": [
+        "Political Fiction",
+        "Adventure"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Imperialism",
+        "Greed",
+        "Revolution",
+        "Power"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": true,
+      "pov_type": "Third-person omniscient",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Nonlinear",
+        "Multiple perspectives"
+      ],
+      "adapted_to_film": false,
+      "awards": [],
+      "controversy_or_banned": false,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Omniscient"
+    },
+    {
+      "title": "The Rainbow",
+      "author": "D. H. Lawrence",
+      "year_published": 1915,
+      "word_count": "[verify]",
+      "series": "Series",
+      "country_of_author": "United Kingdom",
+      "original_language": "English",
+      "location_setting": [
+        "England"
+      ],
+      "time_setting": [
+        "1840s\u20131900s"
+      ],
+      "genre": [
+        "Literary Fiction",
+        "Family Saga"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Sexuality",
+        "Individuality",
+        "Marriage",
+        "Industrialization"
+      ],
+      "protagonist_gender": [
+        "Multiple"
+      ],
+      "multiple_pov": true,
+      "pov_type": "Third-person omniscient",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Generational",
+        "Chronological"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": true,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Omniscient"
+    },
+    {
+      "title": "Women in Love",
+      "author": "D. H. Lawrence",
+      "year_published": 1920,
+      "word_count": "[verify]",
+      "series": "Series",
+      "country_of_author": "United Kingdom",
+      "original_language": "English",
+      "location_setting": [
+        "England"
+      ],
+      "time_setting": [
+        "Early 20th century"
+      ],
+      "genre": [
+        "Literary Fiction",
+        "Psychological Fiction"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Relationships",
+        "Desire",
+        "Intellectualism",
+        "Gender roles"
+      ],
+      "protagonist_gender": [
+        "Female"
+      ],
+      "multiple_pov": true,
+      "pov_type": "Third-person omniscient",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Parallel narratives",
+        "Psychological"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": true,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Omniscient"
+    },
+    {
+      "title": "Tropic of Cancer",
+      "author": "Henry Miller",
+      "year_published": 1934,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "Paris",
+        "France"
+      ],
+      "time_setting": [
+        "1930s"
+      ],
+      "genre": [
+        "Autobiographical Fiction",
+        "Modernist"
+      ],
+      "literary_movement": [
+        "Modernism"
+      ],
+      "themes": [
+        "Sexuality",
+        "Poverty",
+        "Artistic life",
+        "Freedom"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": false,
+      "pov_type": "First-person",
+      "narrative_tense": "Present",
+      "narrative_structure": [
+        "Nonlinear",
+        "Stream of consciousness"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": true,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Unreliable"
+    },
+    {
+      "title": "The Naked and the Dead",
+      "author": "Norman Mailer",
+      "year_published": 1948,
+      "word_count": "[verify]",
+      "series": "Standalone",
+      "country_of_author": "United States",
+      "original_language": "English",
+      "location_setting": [
+        "Pacific Island",
+        "World War II"
+      ],
+      "time_setting": [
+        "1940s",
+        "World War II"
+      ],
+      "genre": [
+        "War Fiction",
+        "Psychological Fiction"
+      ],
+      "literary_movement": [
+        "Postwar Literature"
+      ],
+      "themes": [
+        "War",
+        "Authority",
+        "Fear",
+        "Masculinity"
+      ],
+      "protagonist_gender": [
+        "Male"
+      ],
+      "multiple_pov": true,
+      "pov_type": "Third-person omniscient",
+      "narrative_tense": "Past",
+      "narrative_structure": [
+        "Linear",
+        "Flashbacks"
+      ],
+      "adapted_to_film": true,
+      "awards": [],
+      "controversy_or_banned": true,
+      "intended_audience": "Adult",
+      "translated": false,
+      "narrator_type": "Omniscient"
     }
   ]
