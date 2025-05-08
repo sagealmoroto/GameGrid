@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   loadBookData();
   loadBoardFromDate();
-  setupTyping();
+  setupGridClickToFocus();
 });
 
 // === Modal Logic ===
@@ -39,7 +39,7 @@ closeBtn.addEventListener("click", () => {
   modal.classList.add("hidden");
 });
 
-// === Book Data Loader ===
+// === Load Book Data (for autocomplete, future use) ===
 let allBooks = [];
 let acceptedTitles = [];
 
@@ -54,7 +54,7 @@ async function loadBookData() {
   }
 }
 
-// === Placeholder: Load Board by Date ===
+// === Load Board Data (stub for now) ===
 function loadBoardFromDate() {
   const startDate = new Date("2025-05-05");
   const today = new Date();
@@ -63,52 +63,29 @@ function loadBoardFromDate() {
   const boardPath = `boards/board-${boardNumber.toString().padStart(3, "0")}.json`;
 
   console.log("Would load board from:", boardPath);
-  // Future: fetch board data, populate category labels
+  // Future: fetch and inject row/column categories
 }
 
-// === Simulated Typing Logic ===
-function setupTyping() {
-  let activeCell = null;
-
+// === Enable clicking the whole .grid-box to focus the input inside ===
+function setupGridClickToFocus() {
   const boxes = document.querySelectorAll(".grid-box");
-  boxes.forEach((box) => {
-    box.setAttribute("tabindex", "0");
-    box.setAttribute("data-input", "");
 
+  boxes.forEach(box => {
+    const input = box.querySelector(".cell-input");
+
+    // Click anywhere on the box = focus input
     box.addEventListener("click", () => {
-      if (activeCell && activeCell !== box) {
-        activeCell.classList.remove("typing");
-      }
-      activeCell = box;
-      box.classList.add("typing");
-      box.focus();
+      input.focus();
     });
 
-    // Allow pressing "Enter" to simulate submit behavior later
-    box.addEventListener("keydown", (e) => {
-      e.preventDefault();
-
-      let value = box.getAttribute("data-input") || "";
-
-      if (e.key === "Backspace") {
-        value = value.slice(0, -1);
-      } else if (e.key === "Enter") {
-        // Placeholder: trigger submission logic
-        console.log("Submitted:", value);
-      } else if (e.key.length === 1) {
-        value += e.key;
-      }
-
-      box.setAttribute("data-input", value);
+    // Optional: select text on focus
+    input.addEventListener("focus", () => {
+      input.select();
     });
-  });
 
-  // Allow pressing Escape to blur focus
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && activeCell) {
-      activeCell.blur();
-      activeCell.classList.remove("typing");
-      activeCell = null;
-    }
+    // Optional: basic logging for now
+    input.addEventListener("input", () => {
+      console.log("Typed:", input.value);
+    });
   });
 }

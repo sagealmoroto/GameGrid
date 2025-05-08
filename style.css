@@ -1,4 +1,4 @@
-/* === 1. Base & Theme Variables === */
+/* === 1. Theme Variables === */
 :root {
   --bg-color: #f2f2f5;
   --text-color: #333;
@@ -29,7 +29,7 @@ body {
   padding: 1rem;
 }
 
-/* === 2. Layout Styling === */
+/* === 2. Layout === */
 header {
   display: flex;
   flex-direction: column;
@@ -69,7 +69,7 @@ nav {
   font-size: 1.2rem;
 }
 
-/* === Grid Section === */
+/* === 3. Grid Layout === */
 .grid-container {
   display: flex;
   justify-content: center;
@@ -83,7 +83,7 @@ nav {
   gap: 4px;
 }
 
-/* All grid cells look the same */
+/* Grid Cells (ALL look the same now) */
 .grid-box,
 .col-label,
 .row-label,
@@ -103,30 +103,21 @@ nav {
   overflow-wrap: break-word;
 }
 
-/* Prompt cells */
-.col-label,
-.row-label {
-  font-weight: bold;
-}
-
-/* Answer cells — no input, but keyboard focusable */
-.grid-box {
-  cursor: text;
-  outline: none;
-}
-
-.grid-box:focus {
-  border: 2px solid #3b82f6;
-}
-
-/* Show typed text using data attribute */
-.grid-box.typing::after {
-  content: attr(data-input) " |";
-  white-space: pre-wrap;
+/* === 4. Invisible Input === */
+.cell-input {
+  all: unset;
+  width: 100%;
+  height: 100%;
+  font: inherit;
   color: var(--input-text);
-  animation: blink 1s steps(1) infinite;
+  text-align: center;
+  background-color: transparent;
+  caret-color: #3b82f6;
+  padding: 0.5rem;
+  word-wrap: break-word;
 }
-/* === Game Info + Controls === */
+
+/* === 5. Game Info & Controls === */
 .game-info {
   text-align: center;
 }
@@ -152,7 +143,7 @@ nav {
   border-radius: 5px;
 }
 
-/* === 3. Modal Styling === */
+/* === 6. Modal Styling === */
 .modal {
   position: fixed;
   top: 0;
@@ -188,7 +179,7 @@ nav {
   cursor: pointer;
 }
 
-/* === 4. Help Button === */
+/* === 7. Help Button === */
 #help-btn {
   position: fixed;
   bottom: 1rem;
@@ -202,20 +193,18 @@ nav {
   cursor: pointer;
 }
 
-/* === 5. Responsive Grid Sizing (Optional) === */
-@media (min-width: 600px) {
+/* === 8. Responsive Grid (optional for mobile) === */
+@media (max-width: 600px) {
   .grid {
-    grid-template-columns: repeat(4, 150px);
-    grid-template-rows: repeat(4, 150px);
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: repeat(4, 80px);
   }
 
-  .grid-box.typing::after {
-    font-size: 1.2rem;
-  }
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0;
+  .grid-box,
+  .row-label,
+  .col-label,
+  .label-corner {
+    font-size: 0.9rem;
+    padding: 4px;
   }
 }
