@@ -80,11 +80,37 @@
   
   .grid {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: 100px repeat(3, 150px);
+    grid-template-rows: 100px repeat(3, 150px);
     gap: 10px;
   }
   
+  /* Grid Labels */
+  .label-corner {
+    background: transparent;
+  }
+  
+  .col-label,
+  .row-label {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  
+  .col-label {
+    grid-row: 1;
+  }
+  
+  .row-label {
+    grid-column: 1;
+  }
+  
+  /* Cells still styled as before */
   .grid-box {
     background-color: var(--box-bg);
     border: 2px solid var(--accent-color);
