@@ -11,6 +11,7 @@ themeToggle.addEventListener("click", () => {
   }
 });
 
+// === Load Preferences on Startup ===
 window.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
@@ -19,7 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   loadBookData();
   loadBoardFromDate();
-  setupGridClickToFocus();
+  setupGridClickFocus();
 });
 
 // === Modal Logic ===
@@ -39,7 +40,7 @@ closeBtn.addEventListener("click", () => {
   modal.classList.add("hidden");
 });
 
-// === Load Book Data (for autocomplete, future use) ===
+// === Book Data Loader ===
 let allBooks = [];
 let acceptedTitles = [];
 
@@ -54,7 +55,7 @@ async function loadBookData() {
   }
 }
 
-// === Load Board Data (stub for now) ===
+// === Board Loader (stub for future expansion) ===
 function loadBoardFromDate() {
   const startDate = new Date("2025-05-05");
   const today = new Date();
@@ -63,29 +64,29 @@ function loadBoardFromDate() {
   const boardPath = `boards/board-${boardNumber.toString().padStart(3, "0")}.json`;
 
   console.log("Would load board from:", boardPath);
-  // Future: fetch and inject row/column categories
+  // Future: fetch(boardPath).then(...) to populate row/column labels
 }
 
-// === Enable clicking the whole .grid-box to focus the input inside ===
-function setupGridClickToFocus() {
+// === Clickable Grid Box → Focus Input ===
+function setupGridClickFocus() {
   const boxes = document.querySelectorAll(".grid-box");
 
   boxes.forEach(box => {
     const input = box.querySelector(".cell-input");
 
-    // Click anywhere on the box = focus input
+    // Click anywhere on the box to focus the input
     box.addEventListener("click", () => {
       input.focus();
     });
 
-    // Optional: select text on focus
-    input.addEventListener("focus", () => {
-      input.select();
+    // Optional: log what's typed
+    input.addEventListener("input", () => {
+      console.log(`[${box.dataset.cell}] Typed: ${input.value}`);
     });
 
-    // Optional: basic logging for now
-    input.addEventListener("input", () => {
-      console.log("Typed:", input.value);
+    // Optional: select contents on focus
+    input.addEventListener("focus", () => {
+      input.select();
     });
   });
 }

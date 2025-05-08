@@ -69,7 +69,7 @@ nav {
   font-size: 1.2rem;
 }
 
-/* === 3. Grid Layout === */
+/* === 3. Grid === */
 .grid-container {
   display: flex;
   justify-content: center;
@@ -83,7 +83,7 @@ nav {
   gap: 4px;
 }
 
-/* Grid Cells (ALL look the same now) */
+/* All cells: row, column, corner, and answer */
 .grid-box,
 .col-label,
 .row-label,
@@ -114,10 +114,11 @@ nav {
   background-color: transparent;
   caret-color: #3b82f6;
   padding: 0.5rem;
-  word-wrap: break-word;
+  border: none;
+  outline: none;
 }
 
-/* === 5. Game Info & Controls === */
+/* === 5. Game Info + Controls === */
 .game-info {
   text-align: center;
 }
@@ -143,7 +144,7 @@ nav {
   border-radius: 5px;
 }
 
-/* === 6. Modal Styling === */
+/* === 6. Modal === */
 .modal {
   position: fixed;
   top: 0;
@@ -193,7 +194,7 @@ nav {
   cursor: pointer;
 }
 
-/* === 8. Responsive Grid (optional for mobile) === */
+/* === 8. Responsive Grid (optional tweak for smaller screens) === */
 @media (max-width: 600px) {
   .grid {
     grid-template-columns: repeat(4, 80px);
