@@ -93,27 +93,15 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 8px;
+  font-weight: bold;
   font-size: 1rem;
+  color: var(--text-color);
   text-align: center;
+  padding: 8px;
   word-wrap: break-word;
   word-break: break-word;
   overflow-wrap: break-word;
-  color: var(--input-text);
 }
-
-/* Top-left corner cell is blank */
-.label-corner {
-  background-color: var(--box-bg);
-  border: 2px solid var(--accent-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  font-size: 1.1rem;
-  color: var(--text-color);
-}
-
 /* Prompt cells */
 .col-label,
 .row-label {
