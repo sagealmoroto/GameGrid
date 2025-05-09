@@ -21,7 +21,18 @@ function showPopup(msg) {
 
 // === Utility ===
 function capitalizeTitle(title) {
-  return title.replace(/\b\w+/g, w => w.charAt(0).toUpperCase() + w.slice(1));
+  const lowercaseWords = ["a", "an", "and", "but", "or", "for", "nor", "the", "as", "at", "by", "from", "in", "into", "near", "of", "on", "onto", "to", "with"];
+  return title
+    .toLowerCase()
+    .split(" ")
+    .map((word, index) => {
+      if (index === 0 || !lowercaseWords.includes(word)) {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      } else {
+        return word;
+      }
+    })
+    .join(" ");
 }
 
 // === Data & State ===
@@ -122,7 +133,7 @@ function setupGrid() {
             item.classList.add("autocomplete-item");
 
             item.addEventListener("mousedown", (e) => {
-              e.preventDefault(); // prevent blur from interfering
+              e.preventDefault();
               input.value = capitalizeTitle(match);
               dropdown.innerHTML = "";
               dropdown.style.display = "none";

@@ -135,26 +135,21 @@ nav {
 /* === 4. Input Styling === */
 .cell-input {
   all: unset;
+  display: block;
   width: 100%;
   height: 100%;
   font: inherit;
   color: var(--input-text);
-  text-align: center;
   background-color: transparent;
   caret-color: #3b82f6;
   padding: 0.5rem;
-  border: none;
-  outline: none;
-  z-index: 1;
-
-  /* WRAPPING SUPPORT */
+  text-align: center;
   white-space: normal;
-  word-break: break-word;
+  word-wrap: break-word;
   overflow-wrap: break-word;
+  overflow-y: auto;
   line-height: 1.2;
   font-size: 0.95rem;
-  max-height: 90%;
-  overflow-y: auto;
 }
 
 /* === 5. Autocomplete Dropdown === */
