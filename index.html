@@ -7,8 +7,6 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Header -->
   <header>
     <h1>3 × 3</h1>
     <nav>
@@ -18,70 +16,62 @@
         <li><a href="#">3x3 Movies</a></li>
         <li><a href="#">3x3 Mythology</a></li>
       </ul>
-      <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
+      <button id="theme-toggle" aria-label="Toggle Theme">🌃</button>
     </nav>
   </header>
 
-  <!-- Main Game Section -->
   <main>
     <section class="grid-container">
       <div class="grid">
-        <!-- Top-left corner -->
         <div class="label-corner">3 × 3</div>
-
-        <!-- Column labels -->
         <div class="col-label" data-col="0">Column 1</div>
         <div class="col-label" data-col="1">Column 2</div>
         <div class="col-label" data-col="2">Column 3</div>
 
-        <!-- Row 1 -->
         <div class="row-label" data-row="0">Row 1</div>
         <div class="grid-box" data-cell="0-0">
-          <input type="text" class="cell-input" />
+          <textarea class="cell-input" rows="2"></textarea>
           <div class="autocomplete"></div>
         </div>
         <div class="grid-box" data-cell="0-1">
-          <input type="text" class="cell-input" />
+          <textarea class="cell-input" rows="2"></textarea>
           <div class="autocomplete"></div>
         </div>
         <div class="grid-box" data-cell="0-2">
-          <input type="text" class="cell-input" />
+          <textarea class="cell-input" rows="2"></textarea>
           <div class="autocomplete"></div>
         </div>
 
-        <!-- Row 2 -->
         <div class="row-label" data-row="1">Row 2</div>
         <div class="grid-box" data-cell="1-0">
-          <input type="text" class="cell-input" />
+          <textarea class="cell-input" rows="2"></textarea>
           <div class="autocomplete"></div>
         </div>
         <div class="grid-box" data-cell="1-1">
-          <input type="text" class="cell-input" />
+          <textarea class="cell-input" rows="2"></textarea>
           <div class="autocomplete"></div>
         </div>
         <div class="grid-box" data-cell="1-2">
-          <input type="text" class="cell-input" />
+          <textarea class="cell-input" rows="2"></textarea>
           <div class="autocomplete"></div>
         </div>
 
-        <!-- Row 3 -->
         <div class="row-label" data-row="2">Row 3</div>
         <div class="grid-box" data-cell="2-0">
-          <input type="text" class="cell-input" />
+          <textarea class="cell-input" rows="2"></textarea>
           <div class="autocomplete"></div>
         </div>
         <div class="grid-box" data-cell="2-1">
-          <input type="text" class="cell-input" />
+          <textarea class="cell-input" rows="2"></textarea>
           <div class="autocomplete"></div>
         </div>
         <div class="grid-box" data-cell="2-2">
-          <input type="text" class="cell-input" />
+          <textarea class="cell-input" rows="2"></textarea>
           <div class="autocomplete"></div>
         </div>
       </div>
     </section>
 
-    <!-- Scoreboard -->
     <section class="game-info">
       <div class="scoreboard">
         <p>Current Score: <span id="current-score">0</span></p>
@@ -89,22 +79,19 @@
         <p>Guesses Left: <span id="guesses-left">9</span></p>
       </div>
 
-      <!-- Mode Toggles -->
       <div class="mode-controls">
         <button id="toggle-infinite">♾️ Infinite Mode: On</button>
         <button id="toggle-hardcore">🔥 Hardcore Mode: Off</button>
       </div>
 
-      <!-- Core Controls -->
       <div class="game-controls">
-        <button id="random-board">🔀 Random Board</button>
+        <button id="random-board">🌀 Random Board</button>
         <button id="view-archive">📜 Past Boards</button>
         <button id="view-answers">📚 Accepted Answers</button>
       </div>
     </section>
   </main>
 
-  <!-- Modal -->
   <div id="how-to-play" class="modal hidden">
     <div class="modal-content">
       <span class="close-btn">&times;</span>
@@ -115,13 +102,9 @@
     </div>
   </div>
 
-  <!-- Help Button -->
   <button id="help-btn" aria-label="Show Help">❓</button>
-
-  <!-- Popup -->
   <div id="popup-message" class="popup hidden"></div>
 
-  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>

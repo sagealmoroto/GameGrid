@@ -114,38 +114,9 @@ nav {
   border: 2px solid gold;
 }
 
-/* Support for long titles */
-.grid-box input.cell-input {
-  white-space: normal;
-  overflow-wrap: break-word;
-  text-align: center;
-  line-height: 1.2;
-  font-size: 0.95rem;
-}
-
-/* Stack mode toggles above control buttons */
-.mode-controls {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.mode-controls button {
-  padding: 0.5rem 1rem;
-  border: none;
-  background-color: var(--accent-color);
-  color: var(--text-color);
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 5px;
-}
-
 /* === 4. Input Styling === */
 .cell-input {
   all: unset;
-  display: block;
   width: 100%;
   height: 100%;
   font: inherit;
@@ -154,12 +125,13 @@ nav {
   caret-color: #3b82f6;
   padding: 0.5rem;
   text-align: center;
-  white-space: normal;
+  white-space: pre-wrap;
   word-break: break-word;
   overflow-wrap: break-word;
   overflow-y: auto;
   line-height: 1.2;
   font-size: 0.95rem;
+  resize: none;
 }
 
 /* === 5. Autocomplete Dropdown === */
@@ -220,6 +192,24 @@ nav {
 
 .scoreboard p {
   margin: 0.5rem 0;
+}
+
+.mode-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.mode-controls button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
 }
 
 .game-controls {

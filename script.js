@@ -114,10 +114,6 @@ function setupGrid() {
     input.addEventListener("focus", () => input.select());
 
     input.addEventListener("input", () => {
-      input.style.whiteSpace = "normal";
-      input.style.wordBreak = "break-word";
-      input.style.overflowWrap = "break-word";
-
       const value = input.value.toLowerCase().trim();
       dropdown.innerHTML = "";
       activeIndex = -1;
