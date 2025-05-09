@@ -1,3 +1,4 @@
+/* === 1. Theme Variables === */
 :root {
   --bg-color: #f2f2f5;
   --text-color: #333;
@@ -115,7 +116,7 @@ nav {
   color: var(--input-text);
   background-color: transparent;
   caret-color: #3b82f6;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem;
   text-align: center;
   white-space: pre-wrap;
   word-break: break-word;
@@ -124,10 +125,11 @@ nav {
   line-height: 1.2;
   font-size: 0.95rem;
   resize: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  display: grid;
+  place-items: center;
 }
+
 
 
 /* Autocomplete */
