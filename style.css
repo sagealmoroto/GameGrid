@@ -107,7 +107,6 @@ nav {
 .grid-box.duplicate { border: 2px solid gold; }
 
 /* Textarea styling */
-/* === 4. Input Styling === */
 .cell-input {
   all: unset;
   width: 100%;
@@ -116,18 +115,15 @@ nav {
   color: var(--input-text);
   background-color: transparent;
   caret-color: #3b82f6;
-  padding: 0.5rem;
+  padding: 1.2rem 0.5rem 0.5rem 0.5rem; /* top padding for visual centering */
   text-align: center;
   white-space: pre-wrap;
   word-break: break-word;
   overflow-wrap: break-word;
   overflow-y: auto;
-  line-height: 1.2;
+  line-height: 1.4;
   font-size: 0.95rem;
   resize: none;
-  display: block;
-  display: grid;
-  place-items: center;
 }
 
 
