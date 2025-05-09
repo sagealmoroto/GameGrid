@@ -132,6 +132,16 @@ nav {
   margin-bottom: 0.5rem;
 }
 
+.mode-controls button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
 /* === 4. Input Styling === */
 .cell-input {
   all: unset;
