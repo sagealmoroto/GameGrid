@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>3x3 Books</title>
+  <title>3 × 3</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- Header -->
   <header>
-    <h1>3 x 3</h1>
+    <h1>3 × 3</h1>
     <nav>
       <ul class="navbar">
         <li><a href="#">Home</a></li>
@@ -81,7 +81,7 @@
       </div>
     </section>
 
-    <!-- Score and Controls -->
+    <!-- Scoreboard -->
     <section class="game-info">
       <div class="scoreboard">
         <p>Current Score: <span id="current-score">0</span></p>
@@ -89,17 +89,22 @@
         <p>Guesses Left: <span id="guesses-left">9</span></p>
       </div>
 
+      <!-- Mode Toggles -->
+      <div class="mode-controls">
+        <button id="toggle-infinite">♾️ Infinite Mode: On</button>
+        <button id="toggle-hardcore">🔥 Hardcore Mode: Off</button>
+      </div>
+
+      <!-- Core Controls -->
       <div class="game-controls">
         <button id="random-board">🔀 Random Board</button>
         <button id="view-archive">📜 Past Boards</button>
         <button id="view-answers">📚 Accepted Answers</button>
-        <button id="toggle-infinite">♾️ Infinite Mode: On</button>
-        <button id="toggle-hardcore">🔥 Hardcore Mode: Off</button>
       </div>
     </section>
   </main>
 
-  <!-- How to Play Modal -->
+  <!-- Modal -->
   <div id="how-to-play" class="modal hidden">
     <div class="modal-content">
       <span class="close-btn">&times;</span>
@@ -113,10 +118,10 @@
   <!-- Help Button -->
   <button id="help-btn" aria-label="Show Help">❓</button>
 
-  <!-- Feedback Popup -->
+  <!-- Popup -->
   <div id="popup-message" class="popup hidden"></div>
 
-  <!-- JS -->
+  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>

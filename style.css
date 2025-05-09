@@ -103,16 +103,33 @@ nav {
   overflow-wrap: break-word;
 }
 
+/* Visual borders for feedback */
 .grid-box.correct {
   border: 2px solid green;
 }
-
 .grid-box.incorrect {
   border: 2px solid red;
 }
-
 .grid-box.duplicate {
   border: 2px solid gold;
+}
+
+/* Support for long titles */
+.grid-box input.cell-input {
+  white-space: normal;
+  overflow-wrap: break-word;
+  text-align: center;
+  line-height: 1.2;
+  font-size: 0.95rem;
+}
+
+/* Stack mode toggles above control buttons */
+.mode-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 /* === 4. Input Styling === */
@@ -129,6 +146,15 @@ nav {
   border: none;
   outline: none;
   z-index: 1;
+
+  /* WRAPPING SUPPORT */
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.2;
+  font-size: 0.95rem;
+  max-height: 90%;
+  overflow-y: auto;
 }
 
 /* === 5. Autocomplete Dropdown === */

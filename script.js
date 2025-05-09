@@ -19,6 +19,11 @@ function showPopup(msg) {
   setTimeout(() => popup.classList.add("hidden"), 3000);
 }
 
+// === Utility ===
+function capitalizeTitle(title) {
+  return title.replace(/\b\w+/g, w => w.charAt(0).toUpperCase() + w.slice(1));
+}
+
 // === Data & State ===
 let allBooks = [];
 let acceptedTitles = [];
@@ -113,11 +118,12 @@ function setupGrid() {
         if (matches.length > 0) {
           matches.forEach((match, index) => {
             const item = document.createElement("div");
-            item.textContent = match;
+            item.textContent = capitalizeTitle(match);
             item.classList.add("autocomplete-item");
 
-            item.addEventListener("click", () => {
-              input.value = match;
+            item.addEventListener("mousedown", (e) => {
+              e.preventDefault(); // prevent blur from interfering
+              input.value = capitalizeTitle(match);
               dropdown.innerHTML = "";
               dropdown.style.display = "none";
               const [row, col] = cellKey.split("-").map(Number);
@@ -176,31 +182,29 @@ function setupGrid() {
     }
   });
 
-  // === Infinite Mode Toggle ===
   const toggleButton = document.getElementById("toggle-infinite");
   toggleButton.addEventListener("click", () => {
     infiniteMode = !infiniteMode;
-    toggleButton.textContent = `\u267e\ufe0f Infinite Mode: ${infiniteMode ? "On" : "Off"}`;
+    toggleButton.textContent = `♾️ Infinite Mode: ${infiniteMode ? "On" : "Off"}`;
     document.getElementById("guesses-left").textContent = infiniteMode ? "∞" : guessesLeft;
   });
 
-  // === Hardcore Mode Toggle ===
   const hardcoreBtn = document.getElementById("toggle-hardcore");
   hardcoreBtn.addEventListener("click", () => {
     hardcoreMode = !hardcoreMode;
     hardcoreBtn.textContent = `🔥 Hardcore Mode: ${hardcoreMode ? "On" : "Off"}`;
   });
 
-  // Set initial display for infinite mode
   document.getElementById("guesses-left").textContent = infiniteMode ? "∞" : guessesLeft;
 }
 
-// === Answer Validation ===
 function checkAnswer(inputTitle, rowIndex, colIndex, inputElement, boxElement) {
   const guess = inputTitle.trim().toLowerCase();
   const cellKey = `${rowIndex}-${colIndex}`;
 
   if (lockedCells.has(cellKey)) return;
+  boxElement.classList.remove("duplicate", "incorrect", "correct");
+
   if (usedTitles.has(guess)) {
     showPopup("⛔ Already used");
     boxElement.classList.add("duplicate");
@@ -227,7 +231,7 @@ function checkAnswer(inputTitle, rowIndex, colIndex, inputElement, boxElement) {
   const accepted = boardData.answers[cellKey].map(a => a.toLowerCase());
 
   if (accepted.includes("[verify]")) {
-    showPopup(`⚠ Not enough data for \"${inputTitle}\"`);
+    showPopup(`⚠ Not enough data for "${inputTitle}"`);
     return;
   }
 
