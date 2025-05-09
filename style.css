@@ -115,18 +115,16 @@ nav {
   color: var(--input-text);
   background-color: transparent;
   caret-color: #3b82f6;
-  padding: 1.2rem 0.5rem 0.5rem 0.5rem; /* top padding for visual centering */
+  padding: 0.5rem;
   text-align: center;
   white-space: pre-wrap;
   word-break: break-word;
   overflow-wrap: break-word;
   overflow-y: auto;
-  line-height: 1.4;
+  line-height: 1.2;
   font-size: 0.95rem;
   resize: none;
 }
-
-
 
 /* Autocomplete */
 .autocomplete {
