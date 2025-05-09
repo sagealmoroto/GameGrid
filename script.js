@@ -24,6 +24,8 @@ let allBooks = [];
 let acceptedTitles = [];
 let boardData = null;
 let attemptedAnswers = {}; // { "0-0": ["the hobbit"] }
+let lockedCells = new Set();
+let usedTitles = new Set();
 
 let score = 0;
 let guessesLeft = 9;
@@ -119,7 +121,7 @@ function setupGrid() {
               dropdown.innerHTML = "";
               dropdown.style.display = "none";
               const [row, col] = cellKey.split("-").map(Number);
-              checkAnswer(match, row, col, input);
+              checkAnswer(match, row, col, input, box);
             });
 
             dropdown.appendChild(item);
@@ -154,12 +156,12 @@ function setupGrid() {
             dropdown.style.display = "none";
           }
           const [row, col] = cellKey.split("-").map(Number);
-          checkAnswer(input.value, row, col, input);
+          checkAnswer(input.value, row, col, input, box);
         }
       } else if (e.key === "Enter") {
         e.preventDefault();
         const [row, col] = cellKey.split("-").map(Number);
-        checkAnswer(input.value, row, col, input);
+        checkAnswer(input.value, row, col, input, box);
       }
     });
 
@@ -178,7 +180,8 @@ function setupGrid() {
   const toggleButton = document.getElementById("toggle-infinite");
   toggleButton.addEventListener("click", () => {
     infiniteMode = !infiniteMode;
-    toggleButton.textContent = `♾️ Infinite Mode: ${infiniteMode ? "On" : "Off"}`;
+    toggleButton.textContent = `\u267e\ufe0f Infinite Mode: ${infiniteMode ? "On" : "Off"}`;
+    document.getElementById("guesses-left").textContent = infiniteMode ? "∞" : guessesLeft;
   });
 
   // === Hardcore Mode Toggle ===
@@ -187,12 +190,22 @@ function setupGrid() {
     hardcoreMode = !hardcoreMode;
     hardcoreBtn.textContent = `🔥 Hardcore Mode: ${hardcoreMode ? "On" : "Off"}`;
   });
+
+  // Set initial display for infinite mode
+  document.getElementById("guesses-left").textContent = infiniteMode ? "∞" : guessesLeft;
 }
 
 // === Answer Validation ===
-function checkAnswer(inputTitle, rowIndex, colIndex, inputElement) {
+function checkAnswer(inputTitle, rowIndex, colIndex, inputElement, boxElement) {
   const guess = inputTitle.trim().toLowerCase();
   const cellKey = `${rowIndex}-${colIndex}`;
+
+  if (lockedCells.has(cellKey)) return;
+  if (usedTitles.has(guess)) {
+    showPopup("⛔ Already used");
+    boxElement.classList.add("duplicate");
+    return;
+  }
 
   if (!attemptedAnswers[cellKey]) {
     attemptedAnswers[cellKey] = [];
@@ -200,6 +213,7 @@ function checkAnswer(inputTitle, rowIndex, colIndex, inputElement) {
 
   if (attemptedAnswers[cellKey].includes(guess)) {
     showPopup("⛔ Already attempted");
+    boxElement.classList.add("duplicate");
     return;
   }
 
@@ -213,15 +227,15 @@ function checkAnswer(inputTitle, rowIndex, colIndex, inputElement) {
   const accepted = boardData.answers[cellKey].map(a => a.toLowerCase());
 
   if (accepted.includes("[verify]")) {
-    showPopup(`⚠ Not enough data for "${inputTitle}"`);
+    showPopup(`⚠ Not enough data for \"${inputTitle}\"`);
     return;
   }
 
   if (accepted.includes(guess)) {
     showPopup("✅ Correct!");
+    lockCell(inputElement, boxElement, cellKey, guess, "correct");
   } else {
     showPopup("❌ Incorrect");
-
     score += 1;
     document.getElementById("current-score").textContent = score;
 
@@ -229,12 +243,20 @@ function checkAnswer(inputTitle, rowIndex, colIndex, inputElement) {
       guessesLeft -= 1;
       document.getElementById("guesses-left").textContent = guessesLeft;
     }
-  }
 
-  // === Hardcore Mode: Lock input
-  if (hardcoreMode && inputElement) {
-    inputElement.disabled = true;
-    inputElement.style.opacity = 0.5;
-    inputElement.style.cursor = "not-allowed";
+    if (hardcoreMode) {
+      lockCell(inputElement, boxElement, cellKey, guess, "incorrect");
+    } else {
+      boxElement.classList.add("incorrect");
+    }
   }
+}
+
+function lockCell(input, box, cellKey, guess, className) {
+  input.disabled = true;
+  input.style.opacity = 0.5;
+  input.style.cursor = "not-allowed";
+  box.classList.add(className);
+  lockedCells.add(cellKey);
+  usedTitles.add(guess);
 }

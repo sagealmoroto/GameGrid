@@ -103,6 +103,18 @@ nav {
   overflow-wrap: break-word;
 }
 
+.grid-box.correct {
+  border: 2px solid green;
+}
+
+.grid-box.incorrect {
+  border: 2px solid red;
+}
+
+.grid-box.duplicate {
+  border: 2px solid gold;
+}
+
 /* === 4. Input Styling === */
 .cell-input {
   all: unset;
