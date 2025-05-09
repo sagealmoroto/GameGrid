@@ -29,7 +29,7 @@ body {
   padding: 1rem;
 }
 
-/* Header & Nav */
+/* === 2. Layout === */
 header {
   display: flex;
   flex-direction: column;
@@ -69,7 +69,7 @@ nav {
   font-size: 1.2rem;
 }
 
-/* Grid */
+/* === 3. Grid === */
 .grid-container {
   display: flex;
   justify-content: center;
@@ -98,17 +98,54 @@ nav {
   color: var(--text-color);
   text-align: center;
   padding: 8px;
+  word-wrap: break-word;
+  word-break: break-word;
   overflow-wrap: break-word;
 }
 
-/* Feedback borders */
-.grid-box.correct { border: 2px solid green; }
-.grid-box.incorrect { border: 2px solid red; }
-.grid-box.duplicate { border: 2px solid gold; }
+/* Visual borders for feedback */
+.grid-box.correct {
+  border: 2px solid green;
+}
+.grid-box.incorrect {
+  border: 2px solid red;
+}
+.grid-box.duplicate {
+  border: 2px solid gold;
+}
 
-/* Textarea styling */
+/* Support for long titles */
+.grid-box input.cell-input {
+  white-space: normal;
+  overflow-wrap: break-word;
+  text-align: center;
+  line-height: 1.2;
+  font-size: 0.95rem;
+}
+
+/* Stack mode toggles above control buttons */
+.mode-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.mode-controls button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* === 4. Input Styling === */
 .cell-input {
   all: unset;
+  display: block;
   width: 100%;
   height: 100%;
   font: inherit;
@@ -117,16 +154,15 @@ nav {
   caret-color: #3b82f6;
   padding: 0.5rem;
   text-align: center;
-  white-space: pre-wrap;
+  white-space: normal;
   word-break: break-word;
   overflow-wrap: break-word;
   overflow-y: auto;
   line-height: 1.2;
   font-size: 0.95rem;
-  resize: none;
 }
 
-/* Autocomplete */
+/* === 5. Autocomplete Dropdown === */
 .autocomplete {
   position: absolute;
   top: 100%;
@@ -143,6 +179,7 @@ nav {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   min-width: 130px;
   width: max-content;
+  padding: 0;
   margin-top: 4px;
 }
 
@@ -156,7 +193,7 @@ nav {
   background-color: var(--accent-color);
 }
 
-/* Popup */
+/* === 6. Popup Message === */
 #popup-message {
   position: fixed;
   top: 1rem;
@@ -176,7 +213,7 @@ nav {
   display: none;
 }
 
-/* Score & Controls */
+/* === 7. Game Info + Controls === */
 .game-info {
   text-align: center;
 }
@@ -185,15 +222,13 @@ nav {
   margin: 0.5rem 0;
 }
 
-.mode-controls,
 .game-controls {
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-top: 1rem;
 }
 
-.mode-controls button,
 .game-controls button {
   padding: 0.5rem 1rem;
   border: none;
@@ -204,7 +239,7 @@ nav {
   border-radius: 5px;
 }
 
-/* Modal */
+/* === 8. Modal === */
 .modal {
   position: fixed;
   top: 0;
@@ -240,7 +275,7 @@ nav {
   cursor: pointer;
 }
 
-/* Help Button */
+/* === 9. Help Button === */
 #help-btn {
   position: fixed;
   bottom: 1rem;
@@ -254,7 +289,7 @@ nav {
   cursor: pointer;
 }
 
-/* Responsive */
+/* === 10. Responsive Grid === */
 @media (max-width: 600px) {
   .grid {
     grid-template-columns: repeat(4, 80px);
