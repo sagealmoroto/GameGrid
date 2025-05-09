@@ -114,6 +114,10 @@ function setupGrid() {
     input.addEventListener("focus", () => input.select());
 
     input.addEventListener("input", () => {
+      input.style.whiteSpace = "normal";
+      input.style.wordBreak = "break-word";
+      input.style.overflowWrap = "break-word";
+
       const value = input.value.toLowerCase().trim();
       dropdown.innerHTML = "";
       activeIndex = -1;
@@ -219,6 +223,7 @@ function checkAnswer(inputTitle, rowIndex, colIndex, inputElement, boxElement) {
   if (usedTitles.has(guess)) {
     showPopup("⛔ Already used");
     boxElement.classList.add("duplicate");
+    inputElement.value = "";
     return;
   }
 
@@ -229,6 +234,7 @@ function checkAnswer(inputTitle, rowIndex, colIndex, inputElement, boxElement) {
   if (attemptedAnswers[cellKey].includes(guess)) {
     showPopup("⛔ Already attempted");
     boxElement.classList.add("duplicate");
+    inputElement.value = "";
     return;
   }
 
@@ -263,6 +269,7 @@ function checkAnswer(inputTitle, rowIndex, colIndex, inputElement, boxElement) {
       lockCell(inputElement, boxElement, cellKey, guess, "incorrect");
     } else {
       boxElement.classList.add("incorrect");
+      inputElement.value = "";
     }
   }
 }
