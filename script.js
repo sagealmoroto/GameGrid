@@ -35,6 +35,34 @@ function capitalizeTitle(title) {
     .join(" ");
 }
 
+function getAuthorInitials(author) {
+  return author.split(" ").map(word => word[0]).join("");
+}
+
+function renderMasterList() {
+  const container = document.getElementById("accepted-answers-modal");
+  const existingList = document.getElementById("master-book-list");
+  if (existingList) existingList.remove();
+
+  const listContainer = document.createElement("div");
+  listContainer.id = "master-book-list";
+  listContainer.style.columns = "2";
+  listContainer.style.marginTop = "1rem";
+
+  const header = document.createElement("h3");
+  header.textContent = "Master List";
+  listContainer.appendChild(header);
+
+  const sorted = [...allBooks].sort((a, b) => a.title.localeCompare(b.title));
+  sorted.forEach(book => {
+    const p = document.createElement("p");
+    p.textContent = `${book.title} (${getAuthorInitials(book.author)})`;
+    listContainer.appendChild(p);
+  });
+
+  container.querySelector(".modal-content").appendChild(listContainer);
+}
+
 // === Data & State ===
 let allBooks = [];
 let acceptedTitles = [];
@@ -93,12 +121,16 @@ async function loadBoard(boardId) {
 
 // === Setup Modals ===
 function setupModals() {
+  const helpBtn = document.getElementById("help-btn");
+  const howToModal = document.getElementById("how-to-play");
+  helpBtn.addEventListener("click", () => howToModal.classList.remove("hidden"));
   const modals = document.querySelectorAll(".modal");
-  document.querySelectorAll(".close-btn").forEach(btn => {
+    document.querySelectorAll(".close-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const target = btn.getAttribute("data-modal") || btn.closest(".modal").id;
       document.getElementById(target).classList.add("hidden");
     });
+  });
   });
 
   document.getElementById("view-archive").addEventListener("click", () => {
@@ -106,7 +138,7 @@ function setupModals() {
     list.innerHTML = "";
     availableBoards.forEach((id, index) => {
       const li = document.createElement("li");
-      li.textContent = `#${String(index + 1).padStart(3, "0")} – ${id}`;
+      li.textContent = `#${String(index + 1).padStart(3, "0")}`;
       li.style.cursor = "pointer";
       li.addEventListener("click", () => {
         document.getElementById("past-boards-modal").classList.add("hidden");
@@ -119,6 +151,7 @@ function setupModals() {
 
   document.getElementById("view-answers").addEventListener("click", () => {
     document.getElementById("accepted-answers-modal").classList.remove("hidden");
+    renderMasterList();
   });
 }
 
