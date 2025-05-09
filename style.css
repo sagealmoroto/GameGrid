@@ -265,6 +265,8 @@ nav {
   max-width: 500px;
   width: 90%;
   position: relative;
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
 .close-btn {

@@ -42,11 +42,11 @@ let boardData = null;
 let attemptedAnswers = {}; // { "0-0": ["the hobbit"] }
 let lockedCells = new Set();
 let usedTitles = new Set();
-
 let score = 0;
 let guessesLeft = 9;
 let infiniteMode = true;
 let hardcoreMode = false;
+const availableBoards = ["board-001", "board-002", "board-003"];
 
 // === Init ===
 window.addEventListener("DOMContentLoaded", () => {
@@ -54,20 +54,11 @@ window.addEventListener("DOMContentLoaded", () => {
   if (savedTheme === "dark") {
     document.documentElement.setAttribute("data-theme", "dark");
   }
-
   loadBookData();
-  loadBoardFromDate();
+  loadBoard("board-001");
   setupGrid();
+  setupModals();
 });
-
-// === Modal Logic ===
-const modal = document.getElementById("how-to-play");
-const helpBtn = document.getElementById("help-btn");
-const closeBtn = document.querySelector(".close-btn");
-
-window.addEventListener("load", () => modal.classList.remove("hidden"));
-helpBtn.addEventListener("click", () => modal.classList.remove("hidden"));
-closeBtn.addEventListener("click", () => modal.classList.add("hidden"));
 
 // === Load Books JSON ===
 async function loadBookData() {
@@ -80,10 +71,10 @@ async function loadBookData() {
   }
 }
 
-// === Load Board JSON ===
-async function loadBoardFromDate() {
+// === Load Board ===
+async function loadBoard(boardId) {
   try {
-    const response = await fetch("boards/board-001.json");
+    const response = await fetch(`boards/${boardId}.json`);
     boardData = await response.json();
 
     const rowLabels = document.querySelectorAll(".row-label");
@@ -100,6 +91,37 @@ async function loadBoardFromDate() {
   }
 }
 
+// === Setup Modals ===
+function setupModals() {
+  const modals = document.querySelectorAll(".modal");
+  document.querySelectorAll(".close-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const target = btn.getAttribute("data-modal") || btn.closest(".modal").id;
+      document.getElementById(target).classList.add("hidden");
+    });
+  });
+
+  document.getElementById("view-archive").addEventListener("click", () => {
+    const list = document.getElementById("past-board-list");
+    list.innerHTML = "";
+    availableBoards.forEach((id, index) => {
+      const li = document.createElement("li");
+      li.textContent = `#${String(index + 1).padStart(3, "0")} – ${id}`;
+      li.style.cursor = "pointer";
+      li.addEventListener("click", () => {
+        document.getElementById("past-boards-modal").classList.add("hidden");
+        loadBoard(id);
+      });
+      list.appendChild(li);
+    });
+    document.getElementById("past-boards-modal").classList.remove("hidden");
+  });
+
+  document.getElementById("view-answers").addEventListener("click", () => {
+    document.getElementById("accepted-answers-modal").classList.remove("hidden");
+  });
+}
+
 // === Grid Setup ===
 function setupGrid() {
   const boxes = document.querySelectorAll(".grid-box");
@@ -114,10 +136,6 @@ function setupGrid() {
     input.addEventListener("focus", () => input.select());
 
     input.addEventListener("input", () => {
-      input.style.whiteSpace = "normal";
-      input.style.wordBreak = "break-word";
-      input.style.overflowWrap = "break-word";
-
       const value = input.value.toLowerCase().trim();
       dropdown.innerHTML = "";
       activeIndex = -1;
@@ -126,17 +144,14 @@ function setupGrid() {
       const minLength = isShortTitle ? 1 : 4;
 
       if (value.length >= minLength) {
-        const matches = acceptedTitles
-          .filter(title => title.includes(value))
-          .slice(0, 5);
+        const matches = acceptedTitles.filter(title => title.includes(value)).slice(0, 5);
 
         if (matches.length > 0) {
           matches.forEach((match, index) => {
             const item = document.createElement("div");
             item.textContent = capitalizeTitle(match);
             item.classList.add("autocomplete-item");
-
-            item.addEventListener("mousedown", (e) => {
+            item.addEventListener("mousedown", e => {
               e.preventDefault();
               input.value = capitalizeTitle(match);
               dropdown.innerHTML = "";
@@ -144,10 +159,8 @@ function setupGrid() {
               const [row, col] = cellKey.split("-").map(Number);
               checkAnswer(match, row, col, input, box);
             });
-
             dropdown.appendChild(item);
           });
-
           dropdown.style.display = "block";
         } else {
           dropdown.style.display = "none";
@@ -159,7 +172,6 @@ function setupGrid() {
 
     input.addEventListener("keydown", (e) => {
       const items = dropdown.querySelectorAll(".autocomplete-item");
-
       if (dropdown.style.display === "block" && items.length > 0) {
         if (e.key === "ArrowDown") {
           e.preventDefault();
@@ -186,36 +198,34 @@ function setupGrid() {
       }
     });
 
-    input.addEventListener("blur", () => {
-      setTimeout(() => dropdown.style.display = "none", 100);
-    });
+    input.addEventListener("blur", () => setTimeout(() => dropdown.style.display = "none", 100));
 
     function updateActive(items) {
-      items.forEach((item, i) => {
-        item.classList.toggle("active", i === activeIndex);
-      });
+      items.forEach((item, i) => item.classList.toggle("active", i === activeIndex));
     }
   });
 
-  const toggleButton = document.getElementById("toggle-infinite");
-  toggleButton.addEventListener("click", () => {
+  document.getElementById("toggle-infinite").addEventListener("click", () => {
     infiniteMode = !infiniteMode;
-    toggleButton.textContent = `♾️ Infinite Mode: ${infiniteMode ? "On" : "Off"}`;
+    document.getElementById("toggle-infinite").textContent = `♾️ Infinite Mode: ${infiniteMode ? "On" : "Off"}`;
     document.getElementById("guesses-left").textContent = infiniteMode ? "∞" : guessesLeft;
   });
 
-  const hardcoreBtn = document.getElementById("toggle-hardcore");
-  hardcoreBtn.addEventListener("click", () => {
+  document.getElementById("toggle-hardcore").addEventListener("click", () => {
     hardcoreMode = !hardcoreMode;
-    hardcoreBtn.textContent = `🔥 Hardcore Mode: ${hardcoreMode ? "On" : "Off"}`;
+    document.getElementById("toggle-hardcore").textContent = `🔥 Hardcore Mode: ${hardcoreMode ? "On" : "Off"}`;
   });
-
-  document.getElementById("guesses-left").textContent = infiniteMode ? "∞" : guessesLeft;
 }
 
 function checkAnswer(inputTitle, rowIndex, colIndex, inputElement, boxElement) {
   const guess = inputTitle.trim().toLowerCase();
   const cellKey = `${rowIndex}-${colIndex}`;
+
+  if (!acceptedTitles.includes(guess)) {
+    showPopup(`⚠ "${capitalizeTitle(guess)}" is not in the accepted book list.`);
+    inputElement.value = "";
+    return;
+  }
 
   if (lockedCells.has(cellKey)) return;
   boxElement.classList.remove("duplicate", "incorrect", "correct");
@@ -227,9 +237,7 @@ function checkAnswer(inputTitle, rowIndex, colIndex, inputElement, boxElement) {
     return;
   }
 
-  if (!attemptedAnswers[cellKey]) {
-    attemptedAnswers[cellKey] = [];
-  }
+  if (!attemptedAnswers[cellKey]) attemptedAnswers[cellKey] = [];
 
   if (attemptedAnswers[cellKey].includes(guess)) {
     showPopup("⛔ Already attempted");
@@ -239,14 +247,12 @@ function checkAnswer(inputTitle, rowIndex, colIndex, inputElement, boxElement) {
   }
 
   attemptedAnswers[cellKey].push(guess);
-
   if (!boardData || !boardData.answers[cellKey]) {
     showPopup("⚠ This cell is not defined in the board.");
     return;
   }
 
   const accepted = boardData.answers[cellKey].map(a => a.toLowerCase());
-
   if (accepted.includes("[verify]")) {
     showPopup(`⚠ Not enough data for "${inputTitle}"`);
     return;
