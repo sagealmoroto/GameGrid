@@ -1,0 +1,28 @@
+{
+  "board_id": 2,
+  "date": "2025-05-06",
+  "title": "Rebels, Outcasts, and Edge Perspectives",
+  "categories": {
+    "rows": [
+      { "label": "Antiheroes", "type": "themes", "value": "Antihero" },
+      { "label": "Controversial Works", "type": "controversy_or_banned", "value": true },
+      { "label": "First-Person Narrator", "type": "pov_type", "value": "First-person" }
+    ],
+    "columns": [
+      { "label": "Coming-of-Age", "type": "genre", "value": "Bildungsroman" },
+      { "label": "20th Century Setting", "type": "time_setting", "value": "20th century" },
+      { "label": "Male Protagonist", "type": "protagonist_gender", "value": "Male" }
+    ]
+  },
+  "answers": {
+    "0-0": ["catcher in the rye"],
+    "0-1": ["a clockwork orange"],
+    "0-2": ["lolita"],
+    "1-0": ["catch-22"],
+    "1-1": ["brave new world"],
+    "1-2": ["[verify]"],
+    "2-0": ["the great gatsby"],
+    "2-1": ["a portrait of the artist as a young man"],
+    "2-2": ["ulysses"]
+  }
+}

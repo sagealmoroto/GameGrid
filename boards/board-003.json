@@ -1,0 +1,28 @@
+{
+  "board_id": 3,
+  "date": "2025-05-07",
+  "title": "Time & Place",
+  "categories": {
+    "rows": [
+      { "label": "Set in the USA", "type": "location_setting", "value": "United States" },
+      { "label": "Set in Ireland", "type": "location_setting", "value": "Ireland" },
+      { "label": "Historical Fiction", "type": "genre", "value": "Historical Fiction" }
+    ],
+    "columns": [
+      { "label": "1950s Setting", "type": "time_setting", "value": "1950s" },
+      { "label": "Narrative Past Tense", "type": "narrative_tense", "value": "Past" },
+      { "label": "Single POV", "type": "multiple_pov", "value": false }
+    ]
+  },
+  "answers": {
+    "0-0": ["lolita"],
+    "0-1": ["the great gatsby"],
+    "0-2": ["[verify]"],
+    "1-0": ["a portrait of the artist as a young man"],
+    "1-1": ["ulysses"],
+    "1-2": ["[verify]"],
+    "2-0": ["[verify]"],
+    "2-1": ["the sound and the fury"],
+    "2-2": ["darkness at noon"]
+  }
+}

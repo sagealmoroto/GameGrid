@@ -27,7 +27,8 @@ let attemptedAnswers = {}; // { "0-0": ["the hobbit"] }
 
 let score = 0;
 let guessesLeft = 9;
-let infiniteMode = true; // toggle if needed
+let infiniteMode = true;
+let hardcoreMode = false;
 
 // === Init ===
 window.addEventListener("DOMContentLoaded", () => {
@@ -37,7 +38,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   loadBookData();
-  loadBoardFromDate(); // Load board and setup grid
+  loadBoardFromDate();
   setupGrid();
 });
 
@@ -61,14 +62,12 @@ async function loadBookData() {
   }
 }
 
-// === Load Board from JSON ===
+// === Load Board JSON ===
 async function loadBoardFromDate() {
   try {
-    const boardPath = `boards/board-001.json`; // For now, fixed file
-    const response = await fetch(boardPath);
+    const response = await fetch("boards/board-001.json");
     boardData = await response.json();
 
-    // Inject prompts
     const rowLabels = document.querySelectorAll(".row-label");
     const colLabels = document.querySelectorAll(".col-label");
 
@@ -78,14 +77,12 @@ async function loadBoardFromDate() {
     boardData.categories.columns.forEach((cat, i) => {
       colLabels[i].textContent = cat.label;
     });
-
-    console.log("Board loaded:", boardData);
   } catch (err) {
     console.error("Error loading board:", err);
   }
 }
 
-// === Setup Grid Interactions ===
+// === Grid Setup ===
 function setupGrid() {
   const boxes = document.querySelectorAll(".grid-box");
 
@@ -103,7 +100,10 @@ function setupGrid() {
       dropdown.innerHTML = "";
       activeIndex = -1;
 
-      if (value.length >= 1) {
+      const isShortTitle = acceptedTitles.some(title => title.length <= 4 && title === value);
+      const minLength = isShortTitle ? 1 : 4;
+
+      if (value.length >= minLength) {
         const matches = acceptedTitles
           .filter(title => title.includes(value))
           .slice(0, 5);
@@ -118,7 +118,8 @@ function setupGrid() {
               input.value = match;
               dropdown.innerHTML = "";
               dropdown.style.display = "none";
-              input.focus();
+              const [row, col] = cellKey.split("-").map(Number);
+              checkAnswer(match, row, col, input);
             });
 
             dropdown.appendChild(item);
@@ -153,12 +154,12 @@ function setupGrid() {
             dropdown.style.display = "none";
           }
           const [row, col] = cellKey.split("-").map(Number);
-          checkAnswer(input.value, row, col);
+          checkAnswer(input.value, row, col, input);
         }
       } else if (e.key === "Enter") {
         e.preventDefault();
         const [row, col] = cellKey.split("-").map(Number);
-        checkAnswer(input.value, row, col);
+        checkAnswer(input.value, row, col, input);
       }
     });
 
@@ -172,10 +173,24 @@ function setupGrid() {
       });
     }
   });
+
+  // === Infinite Mode Toggle ===
+  const toggleButton = document.getElementById("toggle-infinite");
+  toggleButton.addEventListener("click", () => {
+    infiniteMode = !infiniteMode;
+    toggleButton.textContent = `♾️ Infinite Mode: ${infiniteMode ? "On" : "Off"}`;
+  });
+
+  // === Hardcore Mode Toggle ===
+  const hardcoreBtn = document.getElementById("toggle-hardcore");
+  hardcoreBtn.addEventListener("click", () => {
+    hardcoreMode = !hardcoreMode;
+    hardcoreBtn.textContent = `🔥 Hardcore Mode: ${hardcoreMode ? "On" : "Off"}`;
+  });
 }
 
-// === Check Answer Against Board ===
-function checkAnswer(inputTitle, rowIndex, colIndex) {
+// === Answer Validation ===
+function checkAnswer(inputTitle, rowIndex, colIndex, inputElement) {
   const guess = inputTitle.trim().toLowerCase();
   const cellKey = `${rowIndex}-${colIndex}`;
 
@@ -204,16 +219,22 @@ function checkAnswer(inputTitle, rowIndex, colIndex) {
 
   if (accepted.includes(guess)) {
     showPopup("✅ Correct!");
-    // TODO: visually mark correct
   } else {
     showPopup("❌ Incorrect");
+
+    score += 1;
+    document.getElementById("current-score").textContent = score;
 
     if (!infiniteMode) {
       guessesLeft -= 1;
       document.getElementById("guesses-left").textContent = guessesLeft;
     }
+  }
 
-    score += 1;
-    document.getElementById("current-score").textContent = score;
+  // === Hardcore Mode: Lock input
+  if (hardcoreMode && inputElement) {
+    inputElement.disabled = true;
+    inputElement.style.opacity = 0.5;
+    inputElement.style.cursor = "not-allowed";
   }
 }
