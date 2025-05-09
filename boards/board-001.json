@@ -1,0 +1,52 @@
+{
+  "board_id": 1,
+  "date": "2025-05-05",
+  "title": "Experimental & Modernist Influences",
+  "categories": {
+    "rows": [
+      {
+        "label": "Modernist",
+        "type": "literary_movement",
+        "value": "Modernism"
+      },
+      {
+        "label": "Nonlinear Structure",
+        "type": "narrative_structure",
+        "value": "Nonlinear"
+      },
+      {
+        "label": "Stream of Consciousness",
+        "type": "pov_type",
+        "value": "Stream of consciousness"
+      }
+    ],
+    "columns": [
+      {
+        "label": "Unreliable Narrator",
+        "type": "narrator_type",
+        "value": "Unreliable"
+      },
+      {
+        "label": "Multiple POV",
+        "type": "multiple_pov",
+        "value": true
+      },
+      {
+        "label": "Controversial or Banned",
+        "type": "controversy_or_banned",
+        "value": true
+      }
+    ]
+  },
+  "answers": {
+    "0-0": ["ulysses"],
+    "0-1": ["the sound and the fury"],
+    "0-2": ["lolita"],
+    "1-0": ["ulysses"],
+    "1-1": ["brave new world"],
+    "1-2": ["a clockwork orange"],
+    "2-0": ["a portrait of the artist as a young man"],
+    "2-1": ["ulysses"],
+    "2-2": ["[verify]"]
+  }
+}

@@ -11,7 +11,25 @@ themeToggle.addEventListener("click", () => {
   }
 });
 
-// === Initialize on DOM Load ===
+// === Popup Message ===
+function showPopup(msg) {
+  const popup = document.getElementById("popup-message");
+  popup.textContent = msg;
+  popup.classList.remove("hidden");
+  setTimeout(() => popup.classList.add("hidden"), 3000);
+}
+
+// === Data & State ===
+let allBooks = [];
+let acceptedTitles = [];
+let boardData = null;
+let attemptedAnswers = {}; // { "0-0": ["the hobbit"] }
+
+let score = 0;
+let guessesLeft = 9;
+let infiniteMode = true; // toggle if needed
+
+// === Init ===
 window.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
@@ -19,7 +37,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   loadBookData();
-  loadBoardFromDate();
+  loadBoardFromDate(); // Load board and setup grid
   setupGrid();
 });
 
@@ -28,64 +46,58 @@ const modal = document.getElementById("how-to-play");
 const helpBtn = document.getElementById("help-btn");
 const closeBtn = document.querySelector(".close-btn");
 
-window.addEventListener("load", () => {
-  modal.classList.remove("hidden");
-});
+window.addEventListener("load", () => modal.classList.remove("hidden"));
+helpBtn.addEventListener("click", () => modal.classList.remove("hidden"));
+closeBtn.addEventListener("click", () => modal.classList.add("hidden"));
 
-helpBtn.addEventListener("click", () => {
-  modal.classList.remove("hidden");
-});
-
-closeBtn.addEventListener("click", () => {
-  modal.classList.add("hidden");
-});
-
-// === Book JSON Loader ===
-let allBooks = [];
-let acceptedTitles = [];
-
+// === Load Books JSON ===
 async function loadBookData() {
   try {
     const response = await fetch("books.json");
     allBooks = await response.json();
     acceptedTitles = allBooks.map(book => book.title.toLowerCase());
-    console.log("Book titles loaded:", acceptedTitles);
   } catch (err) {
     console.error("Error loading books.json:", err);
   }
 }
 
-// === Board Loader (Stub) ===
-function loadBoardFromDate() {
-  const startDate = new Date("2025-05-05");
-  const today = new Date();
-  const diffDays = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
-  const boardNumber = diffDays + 1;
-  const boardPath = `boards/board-${boardNumber.toString().padStart(3, "0")}.json`;
+// === Load Board from JSON ===
+async function loadBoardFromDate() {
+  try {
+    const boardPath = `boards/board-001.json`; // For now, fixed file
+    const response = await fetch(boardPath);
+    boardData = await response.json();
 
-  console.log("Would load board from:", boardPath);
+    // Inject prompts
+    const rowLabels = document.querySelectorAll(".row-label");
+    const colLabels = document.querySelectorAll(".col-label");
+
+    boardData.categories.rows.forEach((cat, i) => {
+      rowLabels[i].textContent = cat.label;
+    });
+    boardData.categories.columns.forEach((cat, i) => {
+      colLabels[i].textContent = cat.label;
+    });
+
+    console.log("Board loaded:", boardData);
+  } catch (err) {
+    console.error("Error loading board:", err);
+  }
 }
 
-// === Grid Setup: Input + Autocomplete Logic ===
+// === Setup Grid Interactions ===
 function setupGrid() {
   const boxes = document.querySelectorAll(".grid-box");
 
   boxes.forEach(box => {
     const input = box.querySelector(".cell-input");
     const dropdown = box.querySelector(".autocomplete");
+    const cellKey = box.getAttribute("data-cell");
     let activeIndex = -1;
 
-    // Click anywhere in the box to focus input
-    box.addEventListener("click", () => {
-      input.focus();
-    });
+    box.addEventListener("click", () => input.focus());
+    input.addEventListener("focus", () => input.select());
 
-    // Select all on focus
-    input.addEventListener("focus", () => {
-      input.select();
-    });
-
-    // Handle typing input
     input.addEventListener("input", () => {
       const value = input.value.toLowerCase().trim();
       dropdown.innerHTML = "";
@@ -102,7 +114,6 @@ function setupGrid() {
             item.textContent = match;
             item.classList.add("autocomplete-item");
 
-            // Click to select
             item.addEventListener("click", () => {
               input.value = match;
               dropdown.innerHTML = "";
@@ -122,7 +133,6 @@ function setupGrid() {
       }
     });
 
-    // Keyboard navigation
     input.addEventListener("keydown", (e) => {
       const items = dropdown.querySelectorAll(".autocomplete-item");
 
@@ -142,15 +152,18 @@ function setupGrid() {
             dropdown.innerHTML = "";
             dropdown.style.display = "none";
           }
+          const [row, col] = cellKey.split("-").map(Number);
+          checkAnswer(input.value, row, col);
         }
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        const [row, col] = cellKey.split("-").map(Number);
+        checkAnswer(input.value, row, col);
       }
     });
 
-    // Hide on blur
     input.addEventListener("blur", () => {
-      setTimeout(() => {
-        dropdown.style.display = "none";
-      }, 100);
+      setTimeout(() => dropdown.style.display = "none", 100);
     });
 
     function updateActive(items) {
@@ -159,4 +172,48 @@ function setupGrid() {
       });
     }
   });
+}
+
+// === Check Answer Against Board ===
+function checkAnswer(inputTitle, rowIndex, colIndex) {
+  const guess = inputTitle.trim().toLowerCase();
+  const cellKey = `${rowIndex}-${colIndex}`;
+
+  if (!attemptedAnswers[cellKey]) {
+    attemptedAnswers[cellKey] = [];
+  }
+
+  if (attemptedAnswers[cellKey].includes(guess)) {
+    showPopup("⛔ Already attempted");
+    return;
+  }
+
+  attemptedAnswers[cellKey].push(guess);
+
+  if (!boardData || !boardData.answers[cellKey]) {
+    showPopup("⚠ This cell is not defined in the board.");
+    return;
+  }
+
+  const accepted = boardData.answers[cellKey].map(a => a.toLowerCase());
+
+  if (accepted.includes("[verify]")) {
+    showPopup(`⚠ Not enough data for "${inputTitle}"`);
+    return;
+  }
+
+  if (accepted.includes(guess)) {
+    showPopup("✅ Correct!");
+    // TODO: visually mark correct
+  } else {
+    showPopup("❌ Incorrect");
+
+    if (!infiniteMode) {
+      guessesLeft -= 1;
+      document.getElementById("guesses-left").textContent = guessesLeft;
+    }
+
+    score += 1;
+    document.getElementById("current-score").textContent = score;
+  }
 }
