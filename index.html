@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- Header -->
   <header>
     <h1>3 × 3</h1>
     <nav>
@@ -16,32 +18,43 @@
         <li><a href="#">3x3 Movies</a></li>
         <li><a href="#">3x3 Mythology</a></li>
       </ul>
-      <button id="theme-toggle" aria-label="Toggle Theme">🌗</button>
+      <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
     </nav>
   </header>
 
+  <!-- Game Grid -->
   <main>
     <section class="grid-container">
       <div class="grid">
+        <!-- Top-left corner -->
         <div class="label-corner">3 × 3</div>
-        <div class="col-label">Column 1</div>
-        <div class="col-label">Column 2</div>
-        <div class="col-label">Column 3</div>
-        <div class="row-label">Row 1</div>
-        <div class="grid-box" data-cell="0-0"><input type="text" class="cell-input"><div class="autocomplete"></div></div>
-        <div class="grid-box" data-cell="0-1"><input type="text" class="cell-input"><div class="autocomplete"></div></div>
-        <div class="grid-box" data-cell="0-2"><input type="text" class="cell-input"><div class="autocomplete"></div></div>
-        <div class="row-label">Row 2</div>
-        <div class="grid-box" data-cell="1-0"><input type="text" class="cell-input"><div class="autocomplete"></div></div>
-        <div class="grid-box" data-cell="1-1"><input type="text" class="cell-input"><div class="autocomplete"></div></div>
-        <div class="grid-box" data-cell="1-2"><input type="text" class="cell-input"><div class="autocomplete"></div></div>
-        <div class="row-label">Row 3</div>
-        <div class="grid-box" data-cell="2-0"><input type="text" class="cell-input"><div class="autocomplete"></div></div>
-        <div class="grid-box" data-cell="2-1"><input type="text" class="cell-input"><div class="autocomplete"></div></div>
-        <div class="grid-box" data-cell="2-2"><input type="text" class="cell-input"><div class="autocomplete"></div></div>
+
+        <!-- Column Labels -->
+        <div class="col-label" data-col="0">Column 1</div>
+        <div class="col-label" data-col="1">Column 2</div>
+        <div class="col-label" data-col="2">Column 3</div>
+
+        <!-- Row 1 -->
+        <div class="row-label" data-row="0">Row 1</div>
+        <div class="grid-box" data-cell="0-0"><input type="text" class="cell-input" /><div class="autocomplete"></div></div>
+        <div class="grid-box" data-cell="0-1"><input type="text" class="cell-input" /><div class="autocomplete"></div></div>
+        <div class="grid-box" data-cell="0-2"><input type="text" class="cell-input" /><div class="autocomplete"></div></div>
+
+        <!-- Row 2 -->
+        <div class="row-label" data-row="1">Row 2</div>
+        <div class="grid-box" data-cell="1-0"><input type="text" class="cell-input" /><div class="autocomplete"></div></div>
+        <div class="grid-box" data-cell="1-1"><input type="text" class="cell-input" /><div class="autocomplete"></div></div>
+        <div class="grid-box" data-cell="1-2"><input type="text" class="cell-input" /><div class="autocomplete"></div></div>
+
+        <!-- Row 3 -->
+        <div class="row-label" data-row="2">Row 3</div>
+        <div class="grid-box" data-cell="2-0"><input type="text" class="cell-input" /><div class="autocomplete"></div></div>
+        <div class="grid-box" data-cell="2-1"><input type="text" class="cell-input" /><div class="autocomplete"></div></div>
+        <div class="grid-box" data-cell="2-2"><input type="text" class="cell-input" /><div class="autocomplete"></div></div>
       </div>
     </section>
 
+    <!-- Score and Controls -->
     <section class="game-info">
       <div class="scoreboard">
         <p>Current Score: <span id="current-score">0</span></p>
@@ -62,9 +75,15 @@
     </section>
   </main>
 
+  <!-- Popup -->
+  <div id="popup-message" class="popup hidden"></div>
+
+  <!-- Modals -->
+
+  <!-- How to Play -->
   <div id="how-to-play" class="modal hidden">
     <div class="modal-content">
-      <span class="close-btn">&times;</span>
+      <span class="close-btn" data-modal="how-to-play">&times;</span>
       <h2>How to Play</h2>
       <p>Type book titles that match the intersecting row and column categories in each grid square.</p>
       <p>Suggestions will appear after typing 4+ letters (or immediately if the title is shorter).</p>
@@ -72,7 +91,7 @@
     </div>
   </div>
 
-  <!-- Past Boards Modal -->
+  <!-- Past Boards -->
   <div id="past-boards-modal" class="modal hidden">
     <div class="modal-content">
       <span class="close-btn" data-modal="past-boards-modal">&times;</span>
@@ -81,25 +100,27 @@
     </div>
   </div>
 
-  <!-- Accepted Answers Info Modal -->
+  <!-- Accepted Answers Info -->
   <div id="accepted-answers-modal" class="modal hidden">
     <div class="modal-content">
       <span class="close-btn" data-modal="accepted-answers-modal">&times;</span>
       <h2>Accepted Answers</h2>
-      <p>The books used in this game come from curated lists including:</p>
+      <p>This game uses a limited master list of books from curated sources like:</p>
       <ul>
         <li>The Modern Library 100 Best Novels</li>
         <li>The Booker Prize Winners & Finalists</li>
-        <li>Time Magazine's All-Time 100 Novels</li>
+        <li>TIME Magazine’s 100 Novels</li>
         <li>Other respected literary sources</li>
       </ul>
       <p>Only books in our current database will be accepted. This ensures fairness and consistency.</p>
-      <!-- Master book list will be injected here -->
+      <div id="master-book-list" style="columns: 2; margin-top: 1rem;"></div>
     </div>
   </div>
 
+  <!-- Help Button -->
   <button id="help-btn" aria-label="Show Help">❓</button>
-  <div id="popup-message" class="popup hidden"></div>
+
+  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
