@@ -39,10 +39,6 @@ function capitalizeTitle(title) {
     .join(" ");
 }
 
-function getAuthorInitials(author) {
-  return author.split(" ").map(word => word[0]).join("");
-}
-
 function resetGameState() {
   attemptedAnswers = {};
   lockedCells.clear();
@@ -80,6 +76,7 @@ window.addEventListener("DOMContentLoaded", () => {
   loadBoard(boardId);
   setupGrid();
   setupModals();
+  setupButtons();
   gameStartTime = Date.now();
 });
 
@@ -116,10 +113,40 @@ async function loadBoard(id) {
     document.querySelectorAll(".grid-box").forEach(box => {
       box.classList.remove("correct", "incorrect", "duplicate");
     });
+
+    // Restore from localStorage if available
+    const savedAnswers = JSON.parse(localStorage.getItem("attemptedAnswers") || "{}");
+    const savedLocked = new Set(JSON.parse(localStorage.getItem("lockedCells") || "[]"));
+    const savedUsed = new Set(JSON.parse(localStorage.getItem("usedTitles") || "[]"));
+
+    attemptedAnswers = savedAnswers;
+    lockedCells = savedLocked;
+    usedTitles = savedUsed;
+
+    Object.keys(attemptedAnswers).forEach(cellKey => {
+      const box = document.querySelector(`.grid-box[data-cell="${cellKey}"]`);
+      const input = box.querySelector("input");
+      const guess = attemptedAnswers[cellKey].slice(-1)[0];
+      input.value = capitalizeTitle(guess);
+      lockCell(input, box, cellKey, guess, "correct");
+    });
+
     gameStartTime = Date.now();
   } catch (err) {
     console.error("Error loading board:", err);
   }
+}
+
+// === Setup Buttons ===
+function setupButtons() {
+  document.getElementById("random-board").addEventListener("click", () => {
+    const randomId = availableBoards[Math.floor(Math.random() * availableBoards.length)];
+    loadBoard(randomId);
+  });
+
+  document.getElementById("end-game").addEventListener("click", () => {
+    endGame();
+  });
 }
 
 // === Setup Modals ===
@@ -152,8 +179,19 @@ function setupModals() {
     document.getElementById("accepted-answers-modal").classList.remove("hidden");
     renderMasterList();
   });
-  document.getElementById("end-game-btn").addEventListener("click", () => {
-    endGame();
+}
+
+function renderMasterList() {
+  const container = document.getElementById("master-book-list");
+  container.innerHTML = "";
+  if (allBooks.length === 0) {
+    container.textContent = "Loading book data...";
+    return;
+  }
+  allBooks.forEach(book => {
+    const div = document.createElement("div");
+    div.textContent = capitalizeTitle(book.title);
+    container.appendChild(div);
   });
 }
 
