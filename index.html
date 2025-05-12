@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>3×3 Books</title>
+  <title>3 × 3 Grid Game</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <header>
-    <h1>3×3 Books</h1>
+    <h1>3 × 3</h1>
     <nav>
       <ul class="navbar">
         <li><a href="#">Home</a></li>
@@ -30,43 +31,43 @@
 
         <div class="row-label" data-row="0">Row 1</div>
         <div class="grid-box" data-cell="0-0">
-          <input type="text" class="cell-input" />
+          <input type="text" class="cell-input"/>
           <div class="autocomplete"></div>
         </div>
         <div class="grid-box" data-cell="0-1">
-          <input type="text" class="cell-input" />
+          <input type="text" class="cell-input"/>
           <div class="autocomplete"></div>
         </div>
         <div class="grid-box" data-cell="0-2">
-          <input type="text" class="cell-input" />
+          <input type="text" class="cell-input"/>
           <div class="autocomplete"></div>
         </div>
 
         <div class="row-label" data-row="1">Row 2</div>
         <div class="grid-box" data-cell="1-0">
-          <input type="text" class="cell-input" />
+          <input type="text" class="cell-input"/>
           <div class="autocomplete"></div>
         </div>
         <div class="grid-box" data-cell="1-1">
-          <input type="text" class="cell-input" />
+          <input type="text" class="cell-input"/>
           <div class="autocomplete"></div>
         </div>
         <div class="grid-box" data-cell="1-2">
-          <input type="text" class="cell-input" />
+          <input type="text" class="cell-input"/>
           <div class="autocomplete"></div>
         </div>
 
         <div class="row-label" data-row="2">Row 3</div>
         <div class="grid-box" data-cell="2-0">
-          <input type="text" class="cell-input" />
+          <input type="text" class="cell-input"/>
           <div class="autocomplete"></div>
         </div>
         <div class="grid-box" data-cell="2-1">
-          <input type="text" class="cell-input" />
+          <input type="text" class="cell-input"/>
           <div class="autocomplete"></div>
         </div>
         <div class="grid-box" data-cell="2-2">
-          <input type="text" class="cell-input" />
+          <input type="text" class="cell-input"/>
           <div class="autocomplete"></div>
         </div>
       </div>
@@ -81,49 +82,42 @@
       <div class="mode-controls">
         <button id="toggle-infinite">♾️ Infinite Mode: On</button>
         <button id="toggle-hardcore">🔥 Hardcore Mode: Off</button>
+        <button id="end-game">🏁 End Game</button>
       </div>
 
       <div class="game-controls">
         <button id="random-board">🔀 Random Board</button>
         <button id="view-archive">📜 Past Boards</button>
         <button id="view-answers">📚 Accepted Answers</button>
-        <button id="end-game">🛑 End Game</button>
       </div>
     </section>
   </main>
 
-  <!-- === POPUPS & MODALS === -->
+  <!-- Popup -->
+  <div id="popup-message" class="popup hidden"></div>
 
-  <!-- How to Play Modal -->
+  <!-- Help Modal -->
   <div id="how-to-play" class="modal hidden">
     <div class="modal-content">
       <span class="close-btn" data-modal="how-to-play">&times;</span>
       <h2>How to Play</h2>
-      <p>Match book titles to the intersecting categories of each cell.</p>
-      <p>Type at least 4 characters to begin autocompletion.</p>
-      <p>Each guess affects your score. Try to complete the board efficiently!</p>
-      <hr />
-      <h3>Scoring</h3>
-      <ul>
-        <li>+2 for each correct guess</li>
-        <li>-1 for each incorrect guess</li>
-        <li>Bonus: No incorrect guesses = +5</li>
-        <li>Bonus: Fill all 9 = +5</li>
-        <li>Bonus: Pattern (X/H) = +3</li>
-        <li>Bonus: Theme Match = x1.5</li>
-        <li>Hardcore Bonus = x1.5 (must be active before first guess)</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Accepted Answers Modal -->
-  <div id="accepted-answers-modal" class="modal hidden">
-    <div class="modal-content">
-      <span class="close-btn" data-modal="accepted-answers-modal">&times;</span>
-      <h2>Accepted Answers</h2>
-      <p>This list contains all books currently accepted by the system.</p>
-      <p>Sources include public domain literature, canonical lists, and curated databases.</p>
-      <!-- JS will populate list -->
+      <div class="modal-section">
+        <p>Type book titles that match the intersecting row and column category for each cell.</p>
+        <p>Suggestions appear as you type (4+ characters).</p>
+        <p>Click once per cell. Guess wisely!</p>
+      </div>
+      <div class="modal-section">
+        <h3>Scoring</h3>
+        <ul>
+          <li>+2 points for each correct answer</li>
+          <li>-1 point for each incorrect guess (standard mode)</li>
+          <li>+3 bonus for completing special patterns (e.g., X or H)</li>
+          <li>+2 bonus for completing 7–8 answers from declared theme</li>
+          <li><strong>Multipliers:</strong></li>
+          <li>Hardcore Mode: x1.5</li>
+          <li>Full board with matching theme (secret): x2</li>
+        </ul>
+      </div>
     </div>
   </div>
 
@@ -136,23 +130,29 @@
     </div>
   </div>
 
-  <!-- Results Modal -->
+  <!-- Accepted Answers Modal -->
+  <div id="accepted-answers-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-btn" data-modal="accepted-answers-modal">&times;</span>
+      <h2>Accepted Answers</h2>
+      <p>This list includes all titles from our accepted database, drawn from public domain lists, literary prize archives, and reputable collections.</p>
+      <div id="master-book-list" class="scrollable-columns"></div>
+    </div>
+  </div>
+
+  <!-- Game Results Modal -->
   <div id="results-modal" class="modal hidden">
     <div class="modal-content">
-      <span class="close-btn" data-modal="results-modal">&times;</span>
       <h2>Game Results</h2>
-      <p id="results-score"></p>
-      <p id="results-time"></p>
-      <ul id="results-bonuses"></ul>
+      <p id="results-summary">Loading...</p>
+      <div id="results-breakdown"></div>
     </div>
   </div>
 
   <!-- Help Button -->
   <button id="help-btn" aria-label="Show Help">❓</button>
 
-  <!-- Popup -->
-  <div id="popup-message" class="popup hidden"></div>
-
+  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
