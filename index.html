@@ -2,121 +2,157 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>3x3 BookGrid Game</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3 × 3 Grid Game</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <header>
-    <h1>3x3 BookGrid</h1>
+    <h1>3 × 3</h1>
     <nav>
       <ul class="navbar">
-        <li><button id="view-archive">Past Boards</button></li>
-        <li><button id="view-answers">Accepted Answers</button></li>
-        <li><button id="help-btn">How to Play</button></li>
-        <li><button id="theme-toggle">Toggle Theme</button></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">3x3 Books</a></li>
+        <li><a href="#">3x3 Movies</a></li>
+        <li><a href="#">3x3 Mythology</a></li>
       </ul>
+      <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
     </nav>
   </header>
 
-  <div class="grid-container">
-    <div class="grid">
-      <div class="label-corner"></div>
-      <div class="col-label"></div>
-      <div class="col-label"></div>
-      <div class="col-label"></div>
-      <div class="row-label"></div>
-      <div class="grid-box" data-cell="0-0">
-        <input class="cell-input" />
-        <div class="autocomplete"></div>
-      </div>
-      <div class="grid-box" data-cell="0-1">
-        <input class="cell-input" />
-        <div class="autocomplete"></div>
-      </div>
-      <div class="grid-box" data-cell="0-2">
-        <input class="cell-input" />
-        <div class="autocomplete"></div>
-      </div>
-      <div class="row-label"></div>
-      <div class="grid-box" data-cell="1-0">
-        <input class="cell-input" />
-        <div class="autocomplete"></div>
-      </div>
-      <div class="grid-box" data-cell="1-1">
-        <input class="cell-input" />
-        <div class="autocomplete"></div>
-      </div>
-      <div class="grid-box" data-cell="1-2">
-        <input class="cell-input" />
-        <div class="autocomplete"></div>
-      </div>
-      <div class="row-label"></div>
-      <div class="grid-box" data-cell="2-0">
-        <input class="cell-input" />
-        <div class="autocomplete"></div>
-      </div>
-      <div class="grid-box" data-cell="2-1">
-        <input class="cell-input" />
-        <div class="autocomplete"></div>
-      </div>
-      <div class="grid-box" data-cell="2-2">
-        <input class="cell-input" />
-        <div class="autocomplete"></div>
-      </div>
-    </div>
-  </div>
+  <main>
+    <section class="grid-container">
+      <div class="grid">
+        <div class="label-corner">3 × 3</div>
+        <div class="col-label" data-col="0">Column 1</div>
+        <div class="col-label" data-col="1">Column 2</div>
+        <div class="col-label" data-col="2">Column 3</div>
 
-  <div class="game-info">
-    <div class="scoreboard">
-      <p>Score: <span id="current-score">0</span></p>
-      <p>Guesses Left: <span id="guesses-left">∞</span></p>
-    </div>
-    <div class="mode-controls">
-      <button id="toggle-infinite">♾️ Infinite Mode: On</button>
-      <button id="toggle-hardcore">🔥 Hardcore Mode: Off</button>
-      <button id="end-game-btn">End Game</button>
-    </div>
-  </div>
+        <div class="row-label" data-row="0">Row 1</div>
+        <div class="grid-box" data-cell="0-0">
+          <input type="text" class="cell-input"/>
+          <div class="autocomplete"></div>
+        </div>
+        <div class="grid-box" data-cell="0-1">
+          <input type="text" class="cell-input"/>
+          <div class="autocomplete"></div>
+        </div>
+        <div class="grid-box" data-cell="0-2">
+          <input type="text" class="cell-input"/>
+          <div class="autocomplete"></div>
+        </div>
 
-  <div id="popup-message" class="hidden"></div>
+        <div class="row-label" data-row="1">Row 2</div>
+        <div class="grid-box" data-cell="1-0">
+          <input type="text" class="cell-input"/>
+          <div class="autocomplete"></div>
+        </div>
+        <div class="grid-box" data-cell="1-1">
+          <input type="text" class="cell-input"/>
+          <div class="autocomplete"></div>
+        </div>
+        <div class="grid-box" data-cell="1-2">
+          <input type="text" class="cell-input"/>
+          <div class="autocomplete"></div>
+        </div>
 
-  <!-- Modals -->
+        <div class="row-label" data-row="2">Row 3</div>
+        <div class="grid-box" data-cell="2-0">
+          <input type="text" class="cell-input"/>
+          <div class="autocomplete"></div>
+        </div>
+        <div class="grid-box" data-cell="2-1">
+          <input type="text" class="cell-input"/>
+          <div class="autocomplete"></div>
+        </div>
+        <div class="grid-box" data-cell="2-2">
+          <input type="text" class="cell-input"/>
+          <div class="autocomplete"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="game-info">
+      <div class="scoreboard">
+        <p>Current Score: <span id="current-score">0</span></p>
+        <p>Guesses Left: <span id="guesses-left">9</span></p>
+      </div>
+
+      <div class="mode-controls">
+        <button id="toggle-infinite">♾️ Infinite Mode: On</button>
+        <button id="toggle-hardcore">🔥 Hardcore Mode: Off</button>
+        <button id="end-game">🏁 End Game</button>
+      </div>
+
+      <div class="game-controls">
+        <button id="random-board">🔀 Random Board</button>
+        <button id="view-archive">📜 Past Boards</button>
+        <button id="view-answers">📚 Accepted Answers</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Popup -->
+  <div id="popup-message" class="popup hidden"></div>
+
+  <!-- Help Modal -->
   <div id="how-to-play" class="modal hidden">
     <div class="modal-content">
-      <span class="close-btn" data-modal="how-to-play">×</span>
+      <span class="close-btn" data-modal="how-to-play">&times;</span>
       <h2>How to Play</h2>
-      <p>Type in book titles that satisfy the row/column intersection.</p>
-      <p>Each correct guess fills a grid cell.</p>
-      <p>Complete the grid with valid books from our accepted list.</p>
-      <p>Modes, scoring, and bonuses affect your final result!</p>
+      <div class="modal-section">
+        <p>Type book titles that match the intersecting row and column category for each cell.</p>
+        <p>Suggestions appear as you type (4+ characters).</p>
+        <p>Click once per cell. Guess wisely!</p>
+      </div>
+      <div class="modal-section">
+        <h3>Scoring</h3>
+        <ul>
+          <li>+2 points for each correct answer</li>
+          <li>-1 point for each incorrect guess (standard mode)</li>
+          <li>+3 bonus for completing special patterns (e.g., X or H)</li>
+          <li>+2 bonus for completing 7–8 answers from declared theme</li>
+          <li><strong>Multipliers:</strong></li>
+          <li>Hardcore Mode: x1.5</li>
+          <li>Full board with matching theme (secret): x2</li>
+        </ul>
+      </div>
     </div>
   </div>
 
-  <div id="results-modal" class="modal hidden">
-    <div class="modal-content">
-      <span class="close-btn" data-modal="results-modal">×</span>
-      <div id="results-breakdown"></div>
-    </div>
-  </div>
-
+  <!-- Past Boards Modal -->
   <div id="past-boards-modal" class="modal hidden">
     <div class="modal-content">
-      <span class="close-btn" data-modal="past-boards-modal">×</span>
+      <span class="close-btn" data-modal="past-boards-modal">&times;</span>
       <h2>Past Boards</h2>
       <ul id="past-board-list"></ul>
     </div>
   </div>
 
+  <!-- Accepted Answers Modal -->
   <div id="accepted-answers-modal" class="modal hidden">
     <div class="modal-content">
-      <span class="close-btn" data-modal="accepted-answers-modal">×</span>
-      <h2>Accepted Answers Info</h2>
-      <p>These titles are sourced from various literary lists, including canonical works, academic syllabi, and genre-specific references.</p>
-      <div id="master-book-list"></div>
+      <span class="close-btn" data-modal="accepted-answers-modal">&times;</span>
+      <h2>Accepted Answers</h2>
+      <p>This list includes all titles from our accepted database, drawn from public domain lists, literary prize archives, and reputable collections.</p>
+      <div id="master-book-list" class="scrollable-columns"></div>
     </div>
   </div>
 
+  <!-- Game Results Modal -->
+  <div id="results-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Game Results</h2>
+      <p id="results-summary">Loading...</p>
+      <div id="results-breakdown"></div>
+    </div>
+  </div>
+
+  <!-- Help Button -->
+  <button id="help-btn" aria-label="Show Help">❓</button>
+
+  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
