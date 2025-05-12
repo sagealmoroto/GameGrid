@@ -11,63 +11,7 @@ themeToggle.addEventListener("click", () => {
   }
 });
 
-// === Game State Variables ===
-let allBooks = [];
-let acceptedTitles = [];
-let boardData = null;
-let attemptedAnswers = {};
-let lockedCells = new Set();
-let usedTitles = new Set();
-let score = 0;
-let guessesMade = 0;
-let guessesLeft = 9;
-let infiniteMode = true;
-let hardcoreMode = false;
-
-const patterns = {
-  X: ["0-0", "1-1", "2-2", "0-2", "2-0"],
-  H: ["0-0", "1-0", "2-0", "1-1", "0-2", "1-2", "2-2"]
-};
-
-// === Timer ===
-let startTime = null;
-function startTimer() {
-  if (!startTime) startTime = new Date();
-}
-function getPlayDuration() {
-  if (!startTime) return "00:00";
-  const diff = new Date() - startTime;
-  const m = Math.floor(diff / 60000).toString().padStart(2, "0");
-  const s = Math.floor((diff % 60000) / 1000).toString().padStart(2, "0");
-  return `${m}:${s}`;
-}
-
-// === Load JSON Data ===
-async function loadBookData() {
-  const res = await fetch("books.json");
-  allBooks = await res.json();
-  acceptedTitles = allBooks.map(b => b.title.toLowerCase());
-}
-
-async function loadBoard(boardId) {
-  const res = await fetch(`boards/${boardId}.json`);
-  boardData = await res.json();
-
-  const rows = document.querySelectorAll(".row-label");
-  const cols = document.querySelectorAll(".col-label");
-
-  boardData.categories.rows.forEach((r, i) => rows[i].textContent = r.label);
-  boardData.categories.columns.forEach((c, i) => cols[i].textContent = c.label);
-}
-
 // === Utility ===
-function capitalizeTitle(title) {
-  const smallWords = ["a", "an", "and", "but", "or", "for", "nor", "the", "as", "at", "by", "from", "in", "into", "near", "of", "on", "onto", "to", "with"];
-  return title.toLowerCase().split(" ").map((word, i) =>
-    i === 0 || !smallWords.includes(word) ? word[0].toUpperCase() + word.slice(1) : word
-  ).join(" ");
-}
-
 function showPopup(msg) {
   const popup = document.getElementById("popup-message");
   popup.textContent = msg;
@@ -75,7 +19,137 @@ function showPopup(msg) {
   setTimeout(() => popup.classList.add("hidden"), 3000);
 }
 
-// === Grid Setup ===
+function capitalizeTitle(title) {
+  const lower = ["a", "an", "and", "but", "or", "for", "nor", "the", "as", "at", "by", "from", "in", "into", "near", "of", "on", "onto", "to", "with"];
+  return title
+    .toLowerCase()
+    .split(" ")
+    .map((word, i) => (i === 0 || !lower.includes(word) ? word[0].toUpperCase() + word.slice(1) : word))
+    .join(" ");
+}
+
+function getAuthorInitials(author) {
+  return author.split(" ").map(w => w[0]).join("");
+}
+
+// === Game Data ===
+let allBooks = [];
+let acceptedTitles = [];
+let boardData = null;
+let lockedCells = new Set();
+let usedTitles = new Set();
+let attemptedAnswers = {};
+let score = 0;
+let guessesLeft = 9;
+let infiniteMode = true;
+let hardcoreMode = false;
+let firstGuessMade = false;
+let startTime;
+let endTime;
+const availableBoards = ["board-001", "board-002", "board-003"];
+
+// === Init ===
+window.addEventListener("DOMContentLoaded", () => {
+  if (localStorage.getItem("theme") === "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
+  }
+  setupModals();
+  loadBookData();
+  loadBoard("board-001");
+  setupGrid();
+  startTime = Date.now();
+});
+
+// === Load Books ===
+async function loadBookData() {
+  try {
+    const res = await fetch("books.json");
+    allBooks = await res.json();
+    acceptedTitles = allBooks.map(b => b.title.toLowerCase());
+  } catch (err) {
+    console.error("Error loading books:", err);
+  }
+}
+
+// === Load Board ===
+async function loadBoard(id) {
+  try {
+    const res = await fetch(`boards/${id}.json`);
+    boardData = await res.json();
+
+    const rows = document.querySelectorAll(".row-label");
+    const cols = document.querySelectorAll(".col-label");
+    boardData.categories.rows.forEach((cat, i) => (rows[i].textContent = cat.label));
+    boardData.categories.columns.forEach((cat, i) => (cols[i].textContent = cat.label));
+  } catch (err) {
+    console.error("Board error:", err);
+  }
+}
+
+// === Modals & Buttons ===
+function setupModals() {
+  document.querySelectorAll(".close-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      btn.closest(".modal").classList.add("hidden");
+    });
+  });
+
+  document.getElementById("help-btn").addEventListener("click", () => {
+    document.getElementById("how-to-play").classList.remove("hidden");
+  });
+
+  document.getElementById("view-archive").addEventListener("click", () => {
+    const list = document.getElementById("past-board-list");
+    list.innerHTML = "";
+    availableBoards.forEach((id, index) => {
+      const li = document.createElement("li");
+      li.textContent = `#${String(index + 1).padStart(3, "0")}`;
+      li.style.cursor = "pointer";
+      li.addEventListener("click", () => {
+        document.getElementById("past-boards-modal").classList.add("hidden");
+        loadBoard(id);
+      });
+      list.appendChild(li);
+    });
+    document.getElementById("past-boards-modal").classList.remove("hidden");
+  });
+
+  document.getElementById("view-answers").addEventListener("click", () => {
+    document.getElementById("accepted-answers-modal").classList.remove("hidden");
+    renderMasterList();
+  });
+
+  document.getElementById("end-game").addEventListener("click", () => {
+    endTime = Date.now();
+    showResultsModal();
+  });
+}
+
+function renderMasterList() {
+  const container = document.getElementById("accepted-answers-modal");
+  const existing = document.getElementById("master-book-list");
+  if (existing) existing.remove();
+
+  const wrapper = document.createElement("div");
+  wrapper.id = "master-book-list";
+  wrapper.style.columns = "2";
+  wrapper.style.marginTop = "1rem";
+
+  const header = document.createElement("h3");
+  header.textContent = "Master List";
+  wrapper.appendChild(header);
+
+  const sorted = [...allBooks].sort((a, b) => a.title.localeCompare(b.title));
+  sorted.forEach(book => {
+    const p = document.createElement("p");
+    p.textContent = `${book.title} (${getAuthorInitials(book.author)})`;
+    wrapper.appendChild(p);
+  });
+
+  container.querySelector(".modal-content").appendChild(wrapper);
+}
+
+// === Grid Logic ===
 function setupGrid() {
   document.querySelectorAll(".grid-box").forEach(box => {
     const input = box.querySelector(".cell-input");
@@ -87,79 +161,68 @@ function setupGrid() {
     input.addEventListener("focus", () => input.select());
 
     input.addEventListener("input", () => {
-      startTimer();
       const value = input.value.toLowerCase().trim();
       dropdown.innerHTML = "";
       activeIndex = -1;
 
-      const isShort = acceptedTitles.some(t => t.length <= 4 && t === value);
-      if (value.length >= (isShort ? 1 : 4)) {
-        const matches = acceptedTitles.filter(t => t.includes(value)).slice(0, 5);
-        matches.forEach(match => {
+      const matches = acceptedTitles.filter(t => t.includes(value)).slice(0, 5);
+      if (value.length >= 4 && matches.length > 0) {
+        matches.forEach((match, i) => {
           const item = document.createElement("div");
           item.textContent = capitalizeTitle(match);
           item.classList.add("autocomplete-item");
-          item.addEventListener("mousedown", (e) => {
+          item.addEventListener("mousedown", e => {
             e.preventDefault();
             input.value = capitalizeTitle(match);
             dropdown.innerHTML = "";
             dropdown.style.display = "none";
-            const [r, c] = cellKey.split("-").map(Number);
-            checkAnswer(match, r, c, input, box);
+            const [row, col] = cellKey.split("-").map(Number);
+            checkAnswer(match, row, col, input, box);
           });
           dropdown.appendChild(item);
         });
-        dropdown.style.display = matches.length > 0 ? "block" : "none";
+        dropdown.style.display = "block";
       } else {
         dropdown.style.display = "none";
       }
     });
 
-    input.addEventListener("keydown", (e) => {
+    input.addEventListener("keydown", e => {
       const items = dropdown.querySelectorAll(".autocomplete-item");
-      if (dropdown.style.display === "block" && items.length) {
-        if (e.key === "ArrowDown") {
+      if (dropdown.style.display === "block" && items.length > 0) {
+        if (e.key === "ArrowDown" || e.key === "ArrowUp") {
           e.preventDefault();
-          activeIndex = (activeIndex + 1) % items.length;
-          updateActive(items);
-        } else if (e.key === "ArrowUp") {
-          e.preventDefault();
-          activeIndex = (activeIndex - 1 + items.length) % items.length;
-          updateActive(items);
+          activeIndex = (e.key === "ArrowDown") ? (activeIndex + 1) % items.length : (activeIndex - 1 + items.length) % items.length;
+          items.forEach((item, i) => item.classList.toggle("active", i === activeIndex));
         } else if (e.key === "Enter") {
           e.preventDefault();
-          if (activeIndex >= 0) {
+          if (activeIndex >= 0 && items[activeIndex]) {
             input.value = items[activeIndex].textContent;
             dropdown.innerHTML = "";
             dropdown.style.display = "none";
           }
-          const [r, c] = cellKey.split("-").map(Number);
-          checkAnswer(input.value, r, c, input, box);
+          const [row, col] = cellKey.split("-").map(Number);
+          checkAnswer(input.value, row, col, input, box);
         }
       } else if (e.key === "Enter") {
         e.preventDefault();
-        const [r, c] = cellKey.split("-").map(Number);
-        checkAnswer(input.value, r, c, input, box);
+        const [row, col] = cellKey.split("-").map(Number);
+        checkAnswer(input.value, row, col, input, box);
       }
     });
 
     input.addEventListener("blur", () => setTimeout(() => dropdown.style.display = "none", 100));
-
-    function updateActive(items) {
-      items.forEach((item, i) => item.classList.toggle("active", i === activeIndex));
-    }
   });
 
-  // Mode Toggles
   document.getElementById("toggle-infinite").addEventListener("click", () => {
     infiniteMode = !infiniteMode;
-    document.getElementById("guesses-left").textContent = infiniteMode ? "∞" : guessesLeft;
     document.getElementById("toggle-infinite").textContent = `♾️ Infinite Mode: ${infiniteMode ? "On" : "Off"}`;
+    document.getElementById("guesses-left").textContent = infiniteMode ? "∞" : guessesLeft;
   });
 
   document.getElementById("toggle-hardcore").addEventListener("click", () => {
-    if (guessesMade > 0) {
-      showPopup("Hardcore Mode must be enabled before your first guess to earn the bonus.");
+    if (firstGuessMade) {
+      showPopup("⚠️ Enable Hardcore Mode before first guess to earn bonus.");
       return;
     }
     hardcoreMode = !hardcoreMode;
@@ -167,40 +230,39 @@ function setupGrid() {
   });
 }
 
-// === Answer Validation ===
-function checkAnswer(inputTitle, row, col, input, box) {
+// === Answer Logic ===
+function checkAnswer(inputTitle, row, col, inputEl, boxEl) {
   const guess = inputTitle.trim().toLowerCase();
   const cellKey = `${row}-${col}`;
-  startTimer();
-  guessesMade++;
 
+  if (!firstGuessMade) firstGuessMade = true;
   if (!acceptedTitles.includes(guess)) {
     showPopup(`⚠ "${capitalizeTitle(guess)}" is not in the accepted book list.`);
-    input.value = "";
+    inputEl.value = "";
     return;
   }
 
   if (lockedCells.has(cellKey)) return;
-
-  box.classList.remove("correct", "incorrect", "duplicate");
+  boxEl.classList.remove("duplicate", "incorrect", "correct");
 
   if (usedTitles.has(guess)) {
     showPopup("⛔ Already used");
-    box.classList.add("duplicate");
-    input.value = "";
+    boxEl.classList.add("duplicate");
+    inputEl.value = "";
     return;
   }
 
   if (!attemptedAnswers[cellKey]) attemptedAnswers[cellKey] = [];
+
   if (attemptedAnswers[cellKey].includes(guess)) {
     showPopup("⛔ Already attempted");
-    box.classList.add("duplicate");
-    input.value = "";
+    boxEl.classList.add("duplicate");
+    inputEl.value = "";
     return;
   }
 
   attemptedAnswers[cellKey].push(guess);
-  const accepted = boardData.answers[cellKey]?.map(a => a.toLowerCase()) || [];
+  const accepted = (boardData.answers[cellKey] || []).map(a => a.toLowerCase());
 
   if (accepted.includes("[verify]")) {
     showPopup(`⚠ Not enough data for "${inputTitle}"`);
@@ -209,135 +271,57 @@ function checkAnswer(inputTitle, row, col, input, box) {
 
   if (accepted.includes(guess)) {
     showPopup("✅ Correct!");
-    lockCell(input, box, cellKey, guess, "correct");
+    lockCell(inputEl, boxEl, cellKey, guess, "correct");
   } else {
     showPopup("❌ Incorrect");
+    score += 1;
+    document.getElementById("current-score").textContent = score;
+
     if (!infiniteMode) {
       guessesLeft--;
       document.getElementById("guesses-left").textContent = guessesLeft;
     }
-    score += 1;
-    box.classList.add("incorrect");
-    input.value = "";
+
+    if (hardcoreMode) {
+      lockCell(inputEl, boxEl, cellKey, guess, "incorrect");
+    } else {
+      boxEl.classList.add("incorrect");
+      inputEl.value = "";
+    }
+  }
+
+  if (lockedCells.size === 9) {
+    endTime = Date.now();
+    showResultsModal();
   }
 }
 
-function lockCell(input, box, cellKey, guess, className) {
+function lockCell(input, box, key, guess, className) {
   input.disabled = true;
   input.style.opacity = 0.5;
   input.style.cursor = "not-allowed";
   box.classList.add(className);
-  lockedCells.add(cellKey);
+  lockedCells.add(key);
   usedTitles.add(guess);
 }
 
-// === End Game ===
-function countGridThemes(titles) {
-  const map = {};
-  titles.forEach(title => {
-    const b = allBooks.find(book => book.title.toLowerCase() === title);
-    if (b?.gridThemes) {
-      b.gridThemes.forEach(tag => map[tag] = (map[tag] || 0) + 1);
-    }
-  });
-  return map;
+// === Results ===
+function showResultsModal() {
+  const modal = document.getElementById("results-modal");
+  const timePlayed = ((endTime - startTime) / 1000).toFixed(2);
+  const scoreEl = document.getElementById("results-score");
+  const timeEl = document.getElementById("results-time");
+  const bonusEl = document.getElementById("results-bonuses");
+
+  scoreEl.textContent = `Final Score: ${score}`;
+  timeEl.textContent = `Total Time: ${timePlayed} seconds`;
+
+  const bonuses = [];
+
+  if (hardcoreMode) bonuses.push("Hardcore Mode Bonus x1.5");
+  if (lockedCells.has("0-0") && lockedCells.has("1-1") && lockedCells.has("2-2") && lockedCells.has("0-2") && lockedCells.has("2-0"))
+    bonuses.push("X Marks the Spot! +3");
+
+  bonusEl.innerHTML = bonuses.map(b => `<li>${b}</li>`).join("");
+  modal.classList.remove("hidden");
 }
-
-function checkPatterns(correctCells) {
-  return Object.entries(patterns).filter(([_, keys]) =>
-    keys.every(k => correctCells.has(k))
-  ).map(([k]) => k);
-}
-
-function endGame() {
-  const correctTitles = [];
-  const correctCells = new Set();
-
-  document.querySelectorAll(".grid-box").forEach(box => {
-    const input = box.querySelector(".cell-input");
-    const cellKey = box.getAttribute("data-cell");
-    if (lockedCells.has(cellKey)) {
-      correctTitles.push(input.value.trim().toLowerCase());
-      correctCells.add(cellKey);
-    }
-  });
-
-  const wrong = guessesMade - correctTitles.length;
-  const baseScore = correctTitles.length * 2 - wrong;
-  let finalScore = baseScore;
-  const multipliers = [];
-
-  const patternMatches = checkPatterns(correctCells);
-  if (patternMatches.includes("X")) finalScore += 3;
-  if (patternMatches.includes("H")) finalScore += 3;
-
-  const themeMap = countGridThemes(correctTitles);
-  const declared = boardData.theme?.toLowerCase();
-  if (themeMap[declared] >= 7) multipliers.push({ label: "Declared Theme", value: 1.25 });
-  const secrets = Object.entries(themeMap).filter(([_, v]) => v === 9).map(([k]) => k);
-  if (secrets.length > 0) multipliers.push({ label: "Secret Theme", value: 1.5 });
-  if (hardcoreMode && wrong === 0) multipliers.push({ label: "Hardcore Mode", value: 1.5 });
-
-  const totalMultiplier = multipliers.reduce((acc, m) => acc * m.value, 1);
-  finalScore = Math.round(finalScore * totalMultiplier * 100) / 100;
-
-  showResultsModal({
-    time: getPlayDuration(),
-    correct: correctTitles.length,
-    wrong,
-    baseScore,
-    finalScore,
-    patternsMatched: patternMatches,
-    multipliers,
-    matchedThemes: secrets
-  });
-}
-
-// === Results Modal ===
-function showResultsModal({ time, correct, wrong, baseScore, finalScore, patternsMatched, multipliers, matchedThemes }) {
-  const modal = document.createElement("div");
-  modal.className = "modal";
-  modal.id = "results-modal";
-
-  const content = document.createElement("div");
-  content.className = "modal-content";
-
-  const closeBtn = document.createElement("span");
-  closeBtn.className = "close-btn";
-  closeBtn.innerHTML = "&times;";
-  closeBtn.addEventListener("click", () => modal.remove());
-
-  content.appendChild(closeBtn);
-  content.innerHTML += `
-    <h2>Game Summary</h2>
-    <p><strong>Total Play Time:</strong> ${time}</p>
-    <p><strong>Correct Answers:</strong> ${correct}</p>
-    <p><strong>Wrong Answers:</strong> ${wrong}</p>
-    <p><strong>Base Score:</strong> ${baseScore}</p>
-    <h3>Bonuses Awarded</h3>
-    <ul>
-      ${patternsMatched.includes("X") ? "<li>X Marks the Spot! +3</li>" : ""}
-      ${patternsMatched.includes("H") ? "<li>H for Heroism! +3</li>" : ""}
-      ${multipliers.map(m => `<li>${m.label} Bonus ×${m.value}</li>`).join("")}
-      ${matchedThemes.map(t => `<li>Secret Theme Unlocked: ${t}</li>`).join("")}
-    </ul>
-    <p><strong>Final Score:</strong> ${finalScore}</p>
-  `;
-
-  let best = localStorage.getItem("bestScore");
-  if (!best || finalScore > parseFloat(best)) {
-    best = finalScore;
-    localStorage.setItem("bestScore", best);
-  }
-  content.innerHTML += `<p><strong>Your Best Score:</strong> ${best}</p>`;
-
-  modal.appendChild(content);
-  document.body.appendChild(modal);
-}
-
-// === Init on Load ===
-window.addEventListener("DOMContentLoaded", async () => {
-  await loadBookData();
-  await loadBoard("board-001");
-  setupGrid();
-});
