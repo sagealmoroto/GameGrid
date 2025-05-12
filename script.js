@@ -48,7 +48,8 @@ guessesLeft = 9;
 hardcoreMode = localStorage.getItem("hardcorePreLock") === "true";
 document.getElementById("current-score").textContent = score;
 document.getElementById("guesses-left").textContent = infiniteMode ? "∞" : guessesLeft;
-document.getElementById("toggle-hardcore").textContent = 🔥 Hardcore Mode: ${hardcoreMode ? "On" : "Off"};
+document.getElementById("toggle-hardcore").textContent =
+  `\u{1F525} Hardcore Mode: ${hardcoreMode ? "On" : "Off"}`;
 }
 
 // === Data & State ===
@@ -72,7 +73,6 @@ const savedTheme = localStorage.getItem("theme");
 if (savedTheme === "dark") {
 document.documentElement.setAttribute("data-theme", "dark");
 }
-
 loadBookData();
 loadBoard(boardId);
 setupGrid();
@@ -95,12 +95,8 @@ console.error("Error loading books.json:", err);
 async function loadBoard(id) {
 boardId = id;
 try {
-const response = await fetch(boards/${id}.json);
+const response = await fetch(`boards/${id}.json`);
 boardData = await response.json();
-
-pgsql
-Copy
-Edit
 document.querySelectorAll(".row-label").forEach((el, i) => {
   el.textContent = boardData.categories.rows[i].label;
 });
@@ -145,7 +141,7 @@ const list = document.getElementById("past-board-list");
 list.innerHTML = "";
 availableBoards.forEach((id, index) => {
 const li = document.createElement("li");
-li.textContent = #${String(index + 1).padStart(3, "0")};
+li.textContent = `#${String(index + 1).padStart(3, "0")}`;
 li.style.cursor = "pointer";
 li.addEventListener("click", () => {
 document.getElementById("past-boards-modal").classList.add("hidden");
@@ -193,8 +189,8 @@ const books = titleMap[titleKey];
 const displayTitle = capitalizeTitle(books[0].title);
 const p = document.createElement("p");
 if (books.length > 1) {
-const initials = books.map(b => (${getAuthorInitials(b.author)})).join(", ");
-p.textContent = ${displayTitle} ${initials};
+const initials = books.map(b => `(${getAuthorInitials(b.author)})`).join(", ");
+p.textContent = `${displayTitle} ${initials}`;
 } else {
 p.textContent = displayTitle;
 }
@@ -211,10 +207,6 @@ const input = box.querySelector(".cell-input");
 const dropdown = box.querySelector(".autocomplete");
 const cellKey = box.getAttribute("data-cell");
 let activeIndex = -1;
-
-javascript
-Copy
-Edit
 box.addEventListener("click", () => input.focus());
 input.addEventListener("focus", () => input.select());
 
@@ -287,7 +279,7 @@ function updateActive(items) {
 
 document.getElementById("toggle-infinite").addEventListener("click", () => {
 infiniteMode = !infiniteMode;
-document.getElementById("toggle-infinite").textContent = ♾️ Infinite Mode: ${infiniteMode ? "On" : "Off"};
+document.getElementById("toggle-infinite").textContent = `♾️ Infinite Mode: ${infiniteMode ? "On" : "Off"}`;
 document.getElementById("guesses-left").textContent = infiniteMode ? "∞" : guessesLeft;
 });
 
@@ -308,7 +300,7 @@ const guess = inputTitle.trim().toLowerCase();
 const cellKey = ${rowIndex}-${colIndex};
 
 if (!acceptedTitles.includes(guess)) {
-showPopup(⚠ "${capitalizeTitle(guess)}" is not in the accepted book list.);
+showPopup(`⚠ "${capitalizeTitle(guess)}" is not in the accepted book list.`);
 inputElement.value = "";
 return;
 }
@@ -337,7 +329,7 @@ attemptedAnswers[cellKey].push(guess);
 const validAnswers = boardData.answers[cellKey].map(a => a.toLowerCase());
 
 if (validAnswers.includes("[verify]")) {
-showPopup(⚠ Not enough data for "${inputTitle}");
+showPopup(`⚠ Not enough data for "${inputTitle}"`);
 inputElement.value = "";
 return;
 }
@@ -351,9 +343,6 @@ showPopup("❌ Incorrect");
 score += 1;
 document.getElementById("current-score").textContent = score;
 
-csharp
-Copy
-Edit
 if (!infiniteMode) {
   guessesLeft -= 1;
   document.getElementById("guesses-left").textContent = guessesLeft;
@@ -391,7 +380,24 @@ const elapsed = ((endTime - gameStartTime) / 1000).toFixed(2);
 const modal = document.getElementById("results-modal");
 const container = document.getElementById("results-breakdown");
 
-container.innerHTML = <h2>Game Results</h2> <p><strong>Final Score:</strong> ${score}</p> <p><strong>Total Time:</strong> ${elapsed} seconds</p> <h3>Bonuses</h3> <ul> <li>X Pattern: —</li> <li>H Pattern: —</li> <li>Declared Theme Match: —</li> <li>Secret Theme Match: —</li> <li>Hardcore Mode Bonus: ${hardcoreMode ? "✓" : "—"}</li> </ul> <h3>Multipliers</h3> <ul> <li>Hardcore Mode: ${hardcoreMode ? "x1.5" : "x1.0"}</li> <li>Theme Match: —</li> </ul> ;
+container.innerHTML = `
+  <h2>Game Results</h2>
+  <p><strong>Final Score:</strong> ${score}</p>
+  <p><strong>Total Time:</strong> ${elapsed} seconds</p>
+  <h3>Bonuses</h3>
+  <ul>
+    <li>X Pattern: —</li>
+    <li>H Pattern: —</li>
+    <li>Declared Theme Match: —</li>
+    <li>Secret Theme Match: —</li>
+    <li>Hardcore Mode Bonus: ${hardcoreMode ? "✓" : "—"}</li>
+  </ul>
+  <h3>Multipliers</h3>
+  <ul>
+    <li>Hardcore Mode: ${hardcoreMode ? "x1.5" : "x1.0"}</li>
+    <li>Theme Match: —</li>
+  </ul>
+`;
 
 modal.classList.remove("hidden");
 }
