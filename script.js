@@ -425,9 +425,14 @@ function setupModals() {
     document.getElementById("accepted-answers-modal").classList.remove("hidden");
     renderMasterList();
   });
-  document.getElementById("end-game-btn")?.addEventListener("click", () => {
-    endGame();
-  });
+  document.getElementById("end-game").addEventListener("click", () => {
+  endGame();
+});
+
+document.getElementById("random-board").addEventListener("click", () => {
+  const randomIndex = Math.floor(Math.random() * availableBoards.length);
+  loadBoard(availableBoards[randomIndex]);
+});
   window.addEventListener("keydown", e => {
     if (e.key === "Escape") {
       document.querySelectorAll(".modal").forEach(m => m.classList.add("hidden"));
@@ -527,6 +532,18 @@ function setupGrid() {
     hardcoreMode = !hardcoreMode;
     localStorage.setItem("hardcorePreLock", hardcoreMode);
     document.getElementById("toggle-hardcore").textContent = `🔥 Hardcore Mode: ${hardcoreMode ? "On" : "Off"}`;
+  });
+}
+
+// === Master List Renderer Stub ===
+function renderMasterList() {
+  const list = document.getElementById("master-book-list");
+  list.innerHTML = "";
+  const sorted = [...acceptedTitles].sort();
+  sorted.forEach(title => {
+    const div = document.createElement("div");
+    div.textContent = capitalizeTitle(title);
+    list.appendChild(div);
   });
 }
 
